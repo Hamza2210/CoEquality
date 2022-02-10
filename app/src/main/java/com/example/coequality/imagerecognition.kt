@@ -62,7 +62,7 @@ class imagerecognition : AppCompatActivity() {
         make_prediction = findViewById(R.id.button2)
         img_view = findViewById(R.id.imageView2)
         text_view = findViewById(R.id.textView)
-        camerabtn = findViewById<Button>(R.id.camerabtn)
+        camerabtn = findViewById(R.id.camerabtn)
 
         // handling permissions
         checkandGetpermissions()

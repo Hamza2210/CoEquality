@@ -222,14 +222,15 @@
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:onClick="goToImageRecognition"
-                        android:src="@drawable/imagerecognition" />
+                        android:src="@drawable/imagerecognition"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:onClick="goToImageRecognition"
-                        android:text="@string/image_recognition"
+                        android:text="@string/identify_image"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="18sp" />
 

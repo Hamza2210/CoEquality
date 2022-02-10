@@ -9,7 +9,6 @@
     <string name="text_will_appear_here">Text will appear here</string>
     <string name="light_sensor">Light Sensor</string>
     <string name="vibration_tool">Vibration Tool</string>
-    <string name="image_recognition">Image Recognition</string>
     <string name="settings">Settings</string>
     <string name="about_us">About Us</string>
     <string name="exit">Exit</string>
@@ -28,4 +27,5 @@
         "Light sensor: Utility used to assist the partially sighted in determining the light level of their environment"
         "\n" "\n"
         "EZ Alarm: Utility used to have users be easily directed to their alarm and can have an easy experience settings simple reminders for anything necessary"</string>
+    <string name="identify_image">Identify Image</string>
 </resources>

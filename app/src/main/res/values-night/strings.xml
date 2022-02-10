@@ -2,11 +2,11 @@
 <resources>
     <string name="light_sensor">Light Sensor</string>
     <string name="vibration_tool">Vibration Tool</string>
-    <string name="ez_alarm">EZ Alarm</string>
     <string name="settings">Settings</string>
     <string name="about_us">About Us</string>
     <string name="exit">Exit</string>
     <string name="picture_voice">Picture Voice</string>
     <string name="speech_to_text">Speech-To-Text</string>
     <string name="please_select_an_activity">Please select an activity</string>
+    <string name="identify_image">Identify Image</string>
 </resources>

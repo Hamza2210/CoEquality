@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".picturevoice">
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="32dp"
+        android:onClick="displayAndSay2"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="584dp"
+        android:onClick="displayAndSay9"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="584dp"
+        android:onClick="displayAndSay10"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="456dp"
+        android:onClick="displayAndSay8"
+        android:scaleType="fitCenter"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="456dp"
+        android:onClick="displayAndSay7"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="316dp"
+        android:onClick="displayAndSay6"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="316dp"
+        android:onClick="displayAndSay5"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="180dp"
+        android:onClick="displayAndSay3"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="32dp"
+        android:onClick="displayAndSay1"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="136dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="180dp"
+        android:onClick="displayAndSay4"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

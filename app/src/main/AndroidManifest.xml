@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.coequality">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CoEquality">
+        <activity
+            android:name=".imagerecognition"
+            android:exported="false" />
+        <activity
+            android:name=".picturevoice"
+            android:exported="false" />
+        <activity
+            android:name=".vibration"
+            android:exported="false" />
+        <activity
+            android:name=".animatestartup"
+            android:exported="false" />
+        <activity
+            android:name=".speechtotext"
+            android:exported="false" />
+        <activity
+            android:name=".lightsensor"
+            android:exported="false" />
+        <activity
+            android:name=".toolselect"
+            android:exported="false" />
+        <activity
+            android:name=".mainmenu"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

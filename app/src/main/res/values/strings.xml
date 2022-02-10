@@ -26,6 +26,6 @@
         "\n" "\n"
         "Light sensor: Utility used to assist the partially sighted in determining the light level of their environment"
         "\n" "\n"
-        "EZ Alarm: Utility used to have users be easily directed to their alarm and can have an easy experience settings simple reminders for anything necessary"</string>
+        "EZ Alarm: Utility used to identify objects that are distinguishable within an image. Any image will attempt to have the object recognised whether it be taken straight from the camera or chosen from the gallery. Useful for users with partial blindness needing to see whats in an image as there is narration as well"</string>
     <string name="identify_image">Identify Image</string>
 </resources>

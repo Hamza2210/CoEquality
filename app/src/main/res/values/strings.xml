@@ -16,16 +16,16 @@
     <string name="picture_voice">Picture Voice</string>
     <string name="speech_to_text">Speech-To-Text</string>
     <string name="please_select_an_activity">Please select an activity</string>
-    <string name="aboutus">"Welcome to CoEquality" + "\n" + "\n" + "This application contains the following utilities:" + "\n" + "\n"
-                    + "Light sensor: Utility used to assist the partially sighted in determining the light level of their environment"
-                    + "\n" + "\n"
-                    + "Speech-To-Text Tool: Utility used to assist the partially dead to allow for easy communication and understanding when talking to others"
-                    + "\n" + "\n"
-                    + "Picture Voice: Utility used to assist the development of autistic members of society and children by having audio of the image name be narrated back on click"
-                    + "\n" + "\n"
-                    + "Vibration Tool: Utility used to assist the users who require haptic feedback. Contains different buttons which output different vibration lengths and patterns"
-                    + "\n" + "\n"
-                    + "Light sensor: Utility used to assist the partially sighted in determining the light level of their environment"
-                    + "\n" + "\n"
-                    + "EZ Alarm: Utility used to have users be easily directed to their alarm and can have an easy experience settings simple reminders for anything necessary"</string>
+    <string name="aboutus">"Welcome to CoEquality" "\n" "\n" "This application contains the following utilities:" "\n" "\n"
+        "Light sensor: Utility used to assist the partially sighted in determining the light level of their environment"
+        "\n" "\n"
+        "Speech-To-Text Tool: Utility used to assist the partially dead to allow for easy communication and understanding when talking to others"
+        "\n" "\n"
+        "Picture Voice: Utility used to assist the development of autistic members of society and children by having audio of the image name be narrated back on click"
+        "\n" "\n"
+        "Vibration Tool: Utility used to assist the users who require haptic feedback. Contains different buttons which output different vibration lengths and patterns"
+        "\n" "\n"
+        "Light sensor: Utility used to assist the partially sighted in determining the light level of their environment"
+        "\n" "\n"
+        "EZ Alarm: Utility used to have users be easily directed to their alarm and can have an easy experience settings simple reminders for anything necessary"</string>
 </resources>

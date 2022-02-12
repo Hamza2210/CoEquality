@@ -79,18 +79,18 @@ class imagerecognition : AppCompatActivity() {
 
         galleryButton.setOnClickListener {
             Log.d("mssg", "button pressed")
-            var intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
+            val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
 
             startActivityForResult(intent, 250)
         }
 
         analyseButton.setOnClickListener {
-            var resized = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
+            val resized = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
             val model = MobilenetV110224Quant.newInstance(this)
 
-            var tbuffer = TensorImage.fromBitmap(resized)
-            var byteBuffer = tbuffer.buffer
+            val tBuffer = TensorImage.fromBitmap(resized)
+            val byteBuffer = tBuffer.buffer
 
             // Creates inputs for reference.
             val inputFeature0 =
@@ -101,7 +101,7 @@ class imagerecognition : AppCompatActivity() {
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-            var max = getMax(outputFeature0.floatArray)
+            val max = getMax(outputFeature0.floatArray)
 
             txtResult.text = labels[max]
 
@@ -110,7 +110,7 @@ class imagerecognition : AppCompatActivity() {
         }
 
         openCamera.setOnClickListener {
-            var camera: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            val camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(camera, 200)
         }
 
@@ -123,7 +123,7 @@ class imagerecognition : AppCompatActivity() {
         if(requestCode == 250){
             imageDisplay.setImageURI(data?.data)
 
-            var uri : Uri ?= data?.data
+            val uri : Uri ?= data?.data
             bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
         }
         else if(requestCode == 200 && resultCode == Activity.RESULT_OK){
@@ -134,15 +134,15 @@ class imagerecognition : AppCompatActivity() {
     }
 
     fun getMax(arr:FloatArray) : Int{
-        var ind = 0;
-        var min = 0.0f;
+        var ind = 0
+        var min = 0.0f
 
         for(i in 0..1000)
         {
             if(arr[i] > min)
             {
                 min = arr[i]
-                ind = i;
+                ind = i
             }
         }
         return ind

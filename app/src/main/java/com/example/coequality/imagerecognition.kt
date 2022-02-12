@@ -23,15 +23,15 @@ import java.util.*
 
 class imagerecognition : AppCompatActivity() {
 
-    lateinit var select_image_button : Button
-    lateinit var make_prediction : Button
-    lateinit var img_view : ImageView
-    lateinit var text_view : TextView
+    lateinit var galleryButton : Button
+    lateinit var analyseButton : Button
+    lateinit var imageDisplay : ImageView
+    lateinit var txtResult : TextView
     lateinit var bitmap: Bitmap
-    lateinit var camerabtn : Button
+    lateinit var openCamera : Button
     var tts: TextToSpeech? = null
 
-    fun checkandGetpermissions(){
+    fun checkAndRetrievePermissions(){
         if(checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED){
             requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 100)
         }
@@ -66,52 +66,53 @@ class imagerecognition : AppCompatActivity() {
             { speakOut() }, "com.google.android.tts"
         )
 
-        select_image_button = findViewById(R.id.button)
-        make_prediction = findViewById(R.id.button2)
-        img_view = findViewById(R.id.imageView2)
-        text_view = findViewById(R.id.imageResult)
-        camerabtn = findViewById(R.id.camerabtn)
+        galleryButton = findViewById(R.id.button)
+        analyseButton = findViewById(R.id.button2)
+        imageDisplay = findViewById(R.id.imageView2)
+        txtResult = findViewById(R.id.imageResult)
+        openCamera = findViewById(R.id.camerabtn)
 
         // handling permissions
-        checkandGetpermissions()
+        checkAndRetrievePermissions()
 
         val labels = application.assets.open("labels.txt").bufferedReader().use { it.readText() }.split("\n")
 
-        select_image_button.setOnClickListener(View.OnClickListener {
+        galleryButton.setOnClickListener {
             Log.d("mssg", "button pressed")
-            var intent : Intent = Intent(Intent.ACTION_GET_CONTENT)
+            var intent: Intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
 
             startActivityForResult(intent, 250)
-        })
+        }
 
-        make_prediction.setOnClickListener(View.OnClickListener {
+        analyseButton.setOnClickListener {
             var resized = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
             val model = MobilenetV110224Quant.newInstance(this)
 
             var tbuffer = TensorImage.fromBitmap(resized)
             var byteBuffer = tbuffer.buffer
 
-// Creates inputs for reference.
-            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
+            // Creates inputs for reference.
+            val inputFeature0 =
+                TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
             inputFeature0.loadBuffer(byteBuffer)
 
-// Runs model inference and gets result.
+            // Runs model inference and gets result.
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
             var max = getMax(outputFeature0.floatArray)
 
-            text_view.setText(labels[max])
+            txtResult.text = labels[max]
 
-// Releases model resources if no longer used.
+            // Releases model resources if no longer used.
             model.close()
-        })
+        }
 
-        camerabtn.setOnClickListener(View.OnClickListener {
-            var camera : Intent = Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE)
+        openCamera.setOnClickListener {
+            var camera: Intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(camera, 200)
-        })
+        }
 
 
     }
@@ -120,14 +121,14 @@ class imagerecognition : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if(requestCode == 250){
-            img_view.setImageURI(data?.data)
+            imageDisplay.setImageURI(data?.data)
 
             var uri : Uri ?= data?.data
             bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
         }
         else if(requestCode == 200 && resultCode == Activity.RESULT_OK){
             bitmap = data?.extras?.get("data") as Bitmap
-            img_view.setImageBitmap(bitmap)
+            imageDisplay.setImageBitmap(bitmap)
         }
 
     }

@@ -10,10 +10,7 @@ import android.provider.MediaStore
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.coequality.ml.MobilenetV110224Quant
 import org.tensorflow.lite.DataType
@@ -23,39 +20,36 @@ import java.util.*
 
 class imagerecognition : AppCompatActivity() {
 
-    lateinit var galleryButton : Button
-    lateinit var analyseButton : Button
-    lateinit var imageDisplay : ImageView
-    lateinit var txtResult : TextView
+    lateinit var galleryButton: ImageButton
+    lateinit var analyseButton: Button
+    lateinit var imageDisplay: ImageView
+    lateinit var txtResult: TextView
     lateinit var bitmap: Bitmap
-    lateinit var openCamera : Button
+    lateinit var openCamera: ImageButton
     var tts: TextToSpeech? = null
 
-    fun checkAndRetrievePermissions(){
-        if(checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED){
+    fun checkAndRetrievePermissions() {
+        if (checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
             requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 100)
-        }
-        else{
+        } else {
             Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show()
         }
     }
 
-    override fun onRequestPermissionsResult(
+    /*override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if(requestCode == 100){
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED)
-            {
+        if (requestCode == 100) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show()
-            }
-            else{
+            } else {
                 Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
             }
         }
-    }
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,73 +68,71 @@ class imagerecognition : AppCompatActivity() {
 
         // handling permissions
         checkAndRetrievePermissions()
+    }
 
-        val labels = application.assets.open("labels.txt").bufferedReader().use { it.readText() }.split("\n")
+    fun makePrediction(view: View){
 
-        galleryButton.setOnClickListener {
-            Log.d("mssg", "button pressed")
-            val intent = Intent(Intent.ACTION_GET_CONTENT)
-            intent.type = "image/*"
+        val labels =
+            application.assets.open("labels.txt").bufferedReader().use { it.readText() }.split("\n")
+        val resized = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
+        val model = MobilenetV110224Quant.newInstance(this)
 
-            startActivityForResult(intent, 250)
-        }
+        val tBuffer = TensorImage.fromBitmap(resized)
+        val byteBuffer = tBuffer.buffer
 
-        analyseButton.setOnClickListener {
-            val resized = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
-            val model = MobilenetV110224Quant.newInstance(this)
+        // Creates inputs for reference.
+        val inputFeature0 =
+            TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
+        inputFeature0.loadBuffer(byteBuffer)
 
-            val tBuffer = TensorImage.fromBitmap(resized)
-            val byteBuffer = tBuffer.buffer
+        // Runs model inference and gets result.
+        val outputs = model.process(inputFeature0)
+        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-            // Creates inputs for reference.
-            val inputFeature0 =
-                TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
-            inputFeature0.loadBuffer(byteBuffer)
+        val max = getMax(outputFeature0.floatArray)
 
-            // Runs model inference and gets result.
-            val outputs = model.process(inputFeature0)
-            val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+        txtResult.text = labels[max]
 
-            val max = getMax(outputFeature0.floatArray)
+        // Releases model resources if no longer used.
+        model.close()
 
-            txtResult.text = labels[max]
+    }
 
-            // Releases model resources if no longer used.
-            model.close()
-        }
+    fun goToCamera(view: View){
+        val camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(camera, 200)
+    }
 
-        openCamera.setOnClickListener {
-            val camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            startActivityForResult(camera, 200)
-        }
+    fun goToGallery(view: View) {
+        Log.d("mssg", "button pressed")
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
 
+        startActivityForResult(intent, 250)
 
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == 250){
+        if (requestCode == 250) {
             imageDisplay.setImageURI(data?.data)
 
-            val uri : Uri ?= data?.data
+            val uri: Uri? = data?.data
             bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
-        }
-        else if(requestCode == 200 && resultCode == Activity.RESULT_OK){
+        } else if (requestCode == 200 && resultCode == Activity.RESULT_OK) {
             bitmap = data?.extras?.get("data") as Bitmap
             imageDisplay.setImageBitmap(bitmap)
         }
 
     }
 
-    fun getMax(arr:FloatArray) : Int{
+    fun getMax(arr: FloatArray): Int {
         var ind = 0
         var min = 0.0f
 
-        for(i in 0..1000)
-        {
-            if(arr[i] > min)
-            {
+        for (i in 0..1000) {
+            if (arr[i] > min) {
                 min = arr[i]
                 ind = i
             }
@@ -178,8 +170,8 @@ class imagerecognition : AppCompatActivity() {
         super.onDestroy()
     }
 
-    fun imageResultSay(view: View){
+    fun imageResultSay(view: View) {
         val text = findViewById<TextView>(R.id.imageResult).text.toString()
-        tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null,"")
+        tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")
     }
 }

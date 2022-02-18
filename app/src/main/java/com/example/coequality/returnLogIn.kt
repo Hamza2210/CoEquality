@@ -11,18 +11,19 @@ import com.example.coequality.animatestartup
 import com.example.coequality.model.DataBaseHelper
 import com.example.coequality.model.Passcode
 
-class MainActivity : AppCompatActivity() {
+class returnLogin : AppCompatActivity() {
 
     val dbHelper: DataBaseHelper = DataBaseHelper(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_return_log_in)
 
 
         //Finds the front-end password text box to use
         val passcodeView = findViewById<PasscodeView>(R.id.passcode_view)
 
         //sets length of the passcode to 4 digits
+        passcodeView.localPasscode = dbHelper.getPasscode().last().passcode
         passcodeView.setPasscodeLength(4).listener = object : PasscodeViewListener {
             //Displays incorrect password method if password entered is incorrect
             override fun onFail() {
@@ -34,9 +35,7 @@ class MainActivity : AppCompatActivity() {
             //Starts the next screen activity if the passcode entered is correct
             override fun onSuccess(number: String) {
                 val passcodes = Passcode(0, number)
-                dbHelper.addPasscode(passcodes)
-                passcodeView.localPasscode = dbHelper.getPasscode().last().passcode
-                val intent = Intent(this@MainActivity, animatestartup::class.java)
+                val intent = Intent(this@returnLogin, animatestartup::class.java)
                 startActivity(intent)
 
 

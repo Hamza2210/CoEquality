@@ -15,8 +15,17 @@ class mainmenu : AppCompatActivity() {
         this.finishAffinity()
     }
 
+    fun exitApp(view: View){
+        this.finishAffinity()
+    }
+
     fun goToToolSelect(view: View){
         val intent = Intent(this, toolselect::class.java)
+        startActivity(intent)
+    }
+
+    fun logOut(view:View){
+        val intent = Intent(this, returnLogin::class.java)
         startActivity(intent)
     }
 

@@ -24,9 +24,5 @@ class mainmenu : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun logOut(view:View){
-        val intent = Intent(this, returnLogin::class.java)
-        startActivity(intent)
-    }
 
 }

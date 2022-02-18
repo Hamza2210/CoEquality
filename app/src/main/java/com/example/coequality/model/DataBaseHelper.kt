@@ -3,6 +3,7 @@ package com.example.coequality.model
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
+import android.database.DatabaseUtils
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -101,6 +102,13 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DataBaseName,
         return passcodeList
 
 
+    }
+
+    fun isEmpty(): Boolean{
+        val db: SQLiteDatabase = this.readableDatabase
+        val noOfRows: Long = DatabaseUtils.queryNumEntries(db, PasscodeTableName)
+
+        return noOfRows == 0L
     }
 
 

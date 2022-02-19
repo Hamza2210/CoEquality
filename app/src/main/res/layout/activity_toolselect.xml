@@ -252,21 +252,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:onClick="showLangaugeDialog"
+                    android:onClick="showLanguageDialog"
                     android:orientation="vertical"
                     android:padding="16dp">
 
                     <ImageView
                         android:layout_width="88dp"
                         android:layout_height="88dp"
-                        android:onClick="showLangaugeDialog"
+                        android:onClick="showLanguageDialog"
                         android:src="@drawable/languages" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:onClick="showLangaugeDialog"
+                        android:onClick="showLanguageDialog"
                         android:text="@string/language"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="18sp" />

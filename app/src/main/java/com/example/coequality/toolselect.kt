@@ -23,40 +23,41 @@ class toolselect : AppCompatActivity() {
         setContentView(R.layout.activity_toolselect)
     }
 
-    fun goToLightSensor(view: View){
+    fun goToLightSensor(view: View) {
         val intent = Intent(this, lightsensor::class.java)
         startActivity(intent)
     }
 
-    fun goToSpeechText(view: View){
+    fun goToSpeechText(view: View) {
         val intent = Intent(this, speechtotext::class.java)
         startActivity(intent)
     }
 
-    fun onExit(view: View){
+    fun onExit(view: View) {
         this.finishAffinity()
     }
 
-    fun goToVibrate(view: View){
+    fun goToVibrate(view: View) {
         val intent = Intent(this, vibration::class.java)
         startActivity(intent)
     }
 
-    fun goToPictureVoice(view: View){
+    fun goToPictureVoice(view: View) {
         val intent = Intent(this, picturevoice::class.java)
         startActivity(intent)
     }
 
-    fun goToImageRecognition(view: View){
+    fun goToImageRecognition(view: View) {
         val intent = Intent(this, imagerecognition::class.java)
         startActivity(intent)
     }
 
-    fun aboutDialog(view: View){
+    fun aboutDialog(view: View) {
         AlertDialog.Builder(this)
             .setTitle("CoEquality")
             .setMessage(R.string.aboutus)
-            .setPositiveButton(android.R.string.ok
+            .setPositiveButton(
+                android.R.string.ok
             ) { _, _ ->
                 // Continue with delete operation
             } // A null listener allows the button to dismiss the dialog and take no further action.
@@ -64,7 +65,7 @@ class toolselect : AppCompatActivity() {
             .show()
     }
 
-    fun resetApp(view: View){
+    fun resetApp(view: View) {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle("Please Confirm Password")
 
@@ -77,12 +78,11 @@ class toolselect : AppCompatActivity() {
 
         builder.setPositiveButton("OK") { dialog, which ->
             var passWord = confirmPassword.text.toString()
-            if(passWord == dbHelper.getPasscode().last().passcode){
+            if (passWord == dbHelper.getPasscode().last().passcode) {
                 dbHelper.deleteAll()
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
-            }
-            else{
+            } else {
                 Toast.makeText(this, "Incorrect Password Entered", Toast.LENGTH_SHORT).show()
             }
         }
@@ -91,7 +91,7 @@ class toolselect : AppCompatActivity() {
         builder.show()
     }
 
-    fun showLangaugeDialog(view: View) {
+    fun showLanguageDialog(view: View) {
         val listItems = arrayOf("French", "German", "Italian", "English")
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
         builder.setTitle("Choose Language")
@@ -135,8 +135,6 @@ class toolselect : AppCompatActivity() {
         val language = prefs.getString("My_Lang", "")
         setLocale(language)
     }
-
-
 
 
 }

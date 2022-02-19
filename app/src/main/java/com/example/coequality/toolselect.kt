@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.text.InputType
 import android.view.View
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.coequality.model.DataBaseHelper
@@ -114,8 +113,8 @@ class toolselect : AppCompatActivity() {
             }
             dialog.dismiss()
         }
-        val mDialog = builder.create()
-        mDialog.show()
+        val languageChoose = builder.create()
+        languageChoose.show()
     }
 
     private fun setLocale(lang: String?) {

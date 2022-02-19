@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">CoEquality</string>
+    <string name="coequality" translatable="false">CoEquality</string>
+    <string name="start">Start</string>
+    <string name="todo">TODO</string>
+    <string name="text_will_appear_here" translatable="false">Text will appear here</string>
+    <string name="light_sensor">Lichtsensor</string>
+    <string name="vibration_tool">Vibration</string>
+    <string name="language">Sprache</string>welcome to
+    <string name="darkmode">Dunkler</string>
+    <string name="lightmode">Licht</string>
+    <string name="about_us">Über uns</string>
+    <string name="exit">Ausfahrt</string>
+    <string name="picture_voice">Bildstimme</string>
+    <string name="speech_to_text">Rede</string>
+    <string name="please_select_an_activity">Bitte wählen Sie eine Aktivität aus</string>
+    <string name="aboutus">"Willkommen zu CoEquality" "\n" "\n" "Diese Anwendung enthält die folgenden Dienstprogramme:" "\n" "\n"
+        "Lichtsensor: Hilfsmittel zur Unterstützung von Sehbehinderten bei der Bestimmung des Lichtniveaus ihrer Umgebung"
+        "\n" "\n"
+        "Rede: Dienstprogramm, das verwendet wird, um den teilweise Toten zu helfen, um eine einfache Kommunikation und ein einfaches Verständnis zu ermöglichen, wenn sie mit anderen sprechen"
+        "\n" "\n"
+        "Bildstimme: Dienstprogramm zur Unterstützung der Entwicklung autistischer Mitglieder der Gesellschaft und von Kindern, indem Audio des Bildnamens beim Klicken zurückerzählt wird"
+        "\n" "\n"
+        "Vibrationswerkzeug: Dienstprogramm zur Unterstützung von Benutzern, die haptisches Feedback benötigen. Enthält verschiedene Tasten, die unterschiedliche Vibrationslängen und -muster ausgeben"
+        "\n" "\n"
+        "Bilderkennung: Dienstprogramm zum Identifizieren von Objekten, die in einem Bild unterscheidbar sind. Bei jedem Bild wird versucht, das Objekt zu erkennen, unabhängig davon, ob es direkt von der Kamera aufgenommen oder aus der Galerie ausgewählt wurde. Nützlich für Benutzer mit teilweiser Blindheit, die sehen müssen, was in einem Bild ist, da es auch eine Erzählung gibt"</string>
+    <string name="identify_image">Identifizieren</string>
+    <string name="reset">Neu Starten</string>
+</resources>

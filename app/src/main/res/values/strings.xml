@@ -3,13 +3,15 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
 
     <string name="app_name">CoEquality</string>
-    <string name="coequality">CoEquality</string>
+    <string name="coequality" translatable="false">CoEquality</string>
     <string name="start">Start</string>
     <string name="todo">TODO</string>
-    <string name="text_will_appear_here">Text will appear here</string>
+    <string name="text_will_appear_here" translatable="false">Text will appear here</string>
     <string name="light_sensor">Light Sensor</string>
     <string name="vibration_tool">Vibration Tool</string>
-    <string name="settings">Settings</string>
+    <string name="language">Change Language</string>
+    <string name="darkmode">Dark Mode</string>
+    <string name="lightmode">Light Mode</string>
     <string name="about_us">About Us</string>
     <string name="exit">Exit</string>
     <string name="picture_voice">Picture Voice</string>
@@ -24,8 +26,7 @@
         "\n" "\n"
         "Vibration Tool: Utility used to assist the users who require haptic feedback. Contains different buttons which output different vibration lengths and patterns"
         "\n" "\n"
-        "Light sensor: Utility used to assist the partially sighted in determining the light level of their environment"
-        "\n" "\n"
-        "EZ Alarm: Utility used to identify objects that are distinguishable within an image. Any image will attempt to have the object recognised whether it be taken straight from the camera or chosen from the gallery. Useful for users with partial blindness needing to see whats in an image as there is narration as well"</string>
+        "Image Recognition: Utility used to identify objects that are distinguishable within an image. Any image will attempt to have the object recognised whether it be taken straight from the camera or chosen from the gallery. Useful for users with partial blindness needing to see whats in an image as there is narration as well"</string>
     <string name="identify_image">Identify Image</string>
+    <string name="reset">Reset App</string>
 </resources>

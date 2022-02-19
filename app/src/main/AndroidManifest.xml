@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CoEquality">
         <activity
+            android:name=".test"
+            android:exported="false" />
+        <activity
             android:name=".imagerecognition"
             android:exported="false" />
         <activity

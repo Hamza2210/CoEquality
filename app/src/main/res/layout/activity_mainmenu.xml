@@ -49,38 +49,15 @@
             app:layout_constraintTop_toBottomOf="@+id/logo" />
 
         <Button
-            android:id="@+id/buttonSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="@string/settings"
-            app:layout_constraintEnd_toStartOf="@+id/buttonExit"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonStart" />
-
-        <Button
             android:id="@+id/buttonExit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_width="167dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="120dp"
             android:onClick="exitApp"
             android:text="@string/exit"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/buttonSettings"
             app:layout_constraintTop_toBottomOf="@+id/buttonStart" />
 
-        <Button
-            android:id="@+id/logOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="22dp"
-            android:onClick="logOut"
-            android:text="Log Out"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSettings" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

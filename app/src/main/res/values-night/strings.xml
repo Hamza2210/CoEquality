@@ -2,11 +2,14 @@
 <resources>
     <string name="light_sensor">Light Sensor</string>
     <string name="vibration_tool">Vibration Tool</string>
-    <string name="settings">Settings</string>
+    <string name="language">Change Language</string>
     <string name="about_us">About Us</string>
     <string name="exit">Exit</string>
     <string name="picture_voice">Picture Voice</string>
     <string name="speech_to_text">Speech-To-Text</string>
     <string name="please_select_an_activity">Please select an activity</string>
     <string name="identify_image">Identify Image</string>
+    <string name="reset">Reset App</string>
+    <string name="darkmode">Dark Mode</string>
+    <string name="lightmode">Light Mode</string>
 </resources>

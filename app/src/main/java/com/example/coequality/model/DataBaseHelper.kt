@@ -111,5 +111,10 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DataBaseName,
         return noOfRows == 0L
     }
 
+    fun deleteAll(){
+        val db: SQLiteDatabase = this.writableDatabase
+        db.delete(PasscodeTableName, null, null)
+    }
+
 
 }

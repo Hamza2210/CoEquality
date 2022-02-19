@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
+
+    <string name="app_name" translatable="false">CoEquality</string>
+    <string name="coequality" translatable="false">CoEquality</string>
+    <string name="start">Cominciare</string>
+    <string name="todo">TODO</string>
+    <string name="text_will_appear_here" translatable="false">Text will appear here</string>
+    <string name="light_sensor">Luminosità</string>
+    <string name="vibration_tool">Vibrazione</string>
+    <string name="language">Linguaggio</string>
+    <string name="darkmode">Scura</string>
+    <string name="lightmode">Luce</string>
+    <string name="about_us">Chi siamo</string>
+    <string name="exit">Uscita</string>
+    <string name="picture_voice">Immagine Voce</string>
+    <string name="speech_to_text">Sintesi vocale</string>
+    <string name="please_select_an_activity">Seleziona un\'attività</string>
+    <string name="aboutus">"Benvenuto a CoEquality" "\n" "\n" "Questa applicazione contiene le seguenti utilità:" "\n" "\n"
+        "Sensore di luce: utilità utilizzata per aiutare gli ipovedenti a determinare il livello di luce del loro ambiente"
+        "\n" "\n"
+        "Sintesi vocale: utilità utilizzata per assistere i parzialmente morti per consentire una facile comunicazione e comprensione quando si parla con gli altri"
+        "\n" "\n"
+        "Immagine Voce: utilità utilizzata per assistere lo sviluppo dei membri autistici della società e dei bambini facendo in modo che l'audio del nome dell'immagine venga narrato al clic"
+        "\n" "\n"
+        "Vibrazione: utilità utilizzata per assistere gli utenti che richiedono feedback tattile. Contiene diversi pulsanti che producono diverse lunghezze e modelli di vibrazione"
+        "\n" "\n"
+        "Riconoscimento immagine: utilità utilizzata per identificare oggetti distinguibili all'interno di un'immagine. Qualsiasi immagine tenterà di far riconoscere l'oggetto sia che sia stato preso direttamente dalla fotocamera o scelto dalla galleria. Utile per gli utenti con cecità parziale che hanno bisogno di vedere cosa c'è in un'immagine poiché c'è anche la narrazione"</string>
+    <string name="identify_image">Identifica</string>
+    <string name="reset">Ripristina</string>
+</resources>

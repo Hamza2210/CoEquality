@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">CoEquality</string>
+    <string name="coequality" translatable="false">CoEquality</string>
+    <string name="start">Démarrer</string>
+    <string name="todo">TODO</string>
+    <string name="text_will_appear_here" translatable="false">Text will appear here</string>
+    <string name="light_sensor">Luminosité</string>
+    <string name="vibration_tool">Vibration</string>
+    <string name="language">Langue</string>Picture Voice
+    <string name="darkmode">Mode sombre</string>
+    <string name="lightmode">Mode lumière</string>
+    <string name="about_us">Sur</string>
+    <string name="exit">Sortir</string>
+    <string name="picture_voice">Image Voix</string>
+    <string name="speech_to_text">Outil vocal</string>
+    <string name="please_select_an_activity">Veuillez sélectionner une activité</string>
+    <string name="aboutus">"Bienvenue à CoEquality" "\n" "\n" "Cette application contient les utilitaires suivants:" "\n" "\n"
+        "Capteur de lumière: utilitaire utilisé pour aider les malvoyants à déterminer le niveau de lumière de leur environnement"
+        "\n" "\n"
+        "Outil Vocal: utilitaire utilisé pour aider les personnes partiellement mortes afin de faciliter la communication et la compréhension lorsque vous parlez aux autres"
+        "\n" "\n"
+        "Image Voix: utilitaire utilisé pour aider au développement des membres autistes de la société et des enfants en faisant en sorte que l'audio du nom de l'image soit restitué en un clic"
+        "\n" "\n"
+        "Outil de vibration: utilitaire utilisé pour aider les utilisateurs qui ont besoin d'un retour haptique. Contient différents boutons qui produisent différentes longueurs et modèles de vibration"
+        "\n" "\n"
+        "Reconnaissance d'image : utilitaire utilisé pour identifier les objets qui se distinguent dans une image. Toute image tentera de faire reconnaître l'objet, qu'il soit pris directement de l'appareil photo ou choisi dans la galerie. Utile pour les utilisateurs partiellement aveugles qui ont besoin de voir ce qu'il y a dans une image car il y a aussi une narration"</string>
+    <string name="identify_image">Identifier</string>
+    <string name="reset">Réinitialiser</string>
+</resources>

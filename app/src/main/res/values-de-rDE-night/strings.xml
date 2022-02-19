@@ -11,6 +11,8 @@
     <string name="darkmode">Dunkler</string>
     <string name="lightmode">Licht</string>
     <string name="about_us">Über uns</string>
+    <string name="choose_language">Sprache wählen</string>
+    <string name="confirm_password">Bitte bestätigen Sie Ihr Passwort</string>
     <string name="exit">Ausfahrt</string>
     <string name="picture_voice">Bildstimme</string>
     <string name="speech_to_text">Rede</string>

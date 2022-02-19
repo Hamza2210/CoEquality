@@ -10,6 +10,8 @@
     <string name="please_select_an_activity">Please select an activity</string>
     <string name="identify_image">Identify Image</string>
     <string name="reset">Reset App</string>
+    <string name="confirm_password">Please confirm your password</string>
+    <string name="choose_language">Choose Language</string>
     <string name="darkmode">Dark Mode</string>
     <string name="lightmode">Light Mode</string>
 </resources>

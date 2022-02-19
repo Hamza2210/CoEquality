@@ -67,14 +67,13 @@ class toolselect : AppCompatActivity() {
 
     fun resetApp(view: View) {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        builder.setTitle("Please Confirm Password")
+        builder.setTitle(R.string.confirm_password)
 
         val confirmPassword = EditText(this)
 
         confirmPassword.setHint("Enter Text")
         confirmPassword.inputType = InputType.TYPE_CLASS_NUMBER
         builder.setView(confirmPassword)
-
 
         builder.setPositiveButton("OK") { dialog, which ->
             var passWord = confirmPassword.text.toString()
@@ -86,7 +85,7 @@ class toolselect : AppCompatActivity() {
                 Toast.makeText(this, "Incorrect Password Entered", Toast.LENGTH_SHORT).show()
             }
         }
-        builder.setNegativeButton("Cancel", { dialog, which -> dialog.cancel() })
+        builder.setNegativeButton("Cancel") { dialog, which -> dialog.cancel() }
 
         builder.show()
     }
@@ -94,7 +93,7 @@ class toolselect : AppCompatActivity() {
     fun showLanguageDialog(view: View) {
         val listItems = arrayOf("French", "German", "Italian", "English")
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
-        builder.setTitle("Choose Language")
+        builder.setTitle(R.string.choose_language)
         builder.setSingleChoiceItems(listItems, -1) { dialog, i ->
             if (i == 0) {
                 //French

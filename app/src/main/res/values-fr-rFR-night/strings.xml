@@ -12,6 +12,8 @@
     <string name="lightmode">Mode lumière</string>
     <string name="about_us">Sur</string>
     <string name="exit">Sortir</string>
+    <string name="choose_language">Choisissez la langue</string>
+    <string name="confirm_password">Veuillez confirmer votre mot de passe</string>
     <string name="picture_voice">Image Voix</string>
     <string name="speech_to_text">Outil vocal</string>
     <string name="please_select_an_activity">Veuillez sélectionner une activité</string>

@@ -36,13 +36,10 @@ class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnIni
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 
-
         tts = TextToSpeech(
             applicationContext,
             { speakOut() }, "com.google.android.tts"
         )
-
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 

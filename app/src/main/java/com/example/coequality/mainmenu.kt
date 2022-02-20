@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatDelegate
 import java.util.*
 
 class mainmenu : AppCompatActivity() {
@@ -12,6 +13,17 @@ class mainmenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mainmenu)
         loadLocale()
+
+        var sharedPreferences = getSharedPreferences("night", 0)
+
+        val booleanValue = sharedPreferences.getBoolean("night_mode", true)
+
+        if (booleanValue) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 
     override fun onBackPressed(){

@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.coequality.model.DataBaseHelper
 import java.util.*
 
@@ -20,6 +21,17 @@ class toolselect : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         loadLocale()
         setContentView(R.layout.activity_toolselect)
+
+        var sharedPreferences = getSharedPreferences("night", 0)
+
+        val booleanValue = sharedPreferences.getBoolean("night_mode", true)
+
+        if (booleanValue) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 
     fun goToLightSensor(view: View) {
@@ -48,6 +60,11 @@ class toolselect : AppCompatActivity() {
 
     fun goToImageRecognition(view: View) {
         val intent = Intent(this, imagerecognition::class.java)
+        startActivity(intent)
+    }
+
+    fun chooseTheme(view: View){
+        val intent = Intent(this, lightdark::class.java)
         startActivity(intent)
     }
 

@@ -10,8 +10,7 @@
     <string name="light_sensor">Luminosité</string>
     <string name="vibration_tool">Vibration</string>
     <string name="language">Langue</string>Picture Voice
-    <string name="darkmode">Mode sombre</string>
-    <string name="lightmode">Mode lumière</string>
+    <string name="theme">Thème</string>
     <string name="about_us">Sur</string>
     <string name="choose_language">Choisissez la langue</string>
     <string name="confirm_password">Veuillez confirmer votre mot de passe</string>

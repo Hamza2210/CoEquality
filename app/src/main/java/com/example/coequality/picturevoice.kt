@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.coequality.model.DataBaseHelper
 import com.example.coequality.model.Image
 import java.util.*
@@ -25,6 +26,17 @@ class picturevoice : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_picturevoice)
+
+        var sharedPreferences = getSharedPreferences("night", 0)
+
+        val booleanValue = sharedPreferences.getBoolean("night_mode", true)
+
+        if (booleanValue) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
 
         tts = TextToSpeech(applicationContext,
             { speakOut() }, "com.google.android.tts"

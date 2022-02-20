@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import com.example.coequality.R.id.output
 import java.util.*
 
@@ -25,6 +26,17 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_speechtotext)
+
+        var sharedPreferences = getSharedPreferences("night", 0)
+
+        val booleanValue = sharedPreferences.getBoolean("night_mode", true)
+
+        if (booleanValue) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
+        else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
 
         tts = TextToSpeech(applicationContext,
             { speakOut() }, "com.google.android.tts"

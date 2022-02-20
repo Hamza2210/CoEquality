@@ -47,7 +47,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DataBaseName,
         TODO("Not yet implemented")
     }
 
-    //method used to return all of the topics in the database from the topics table
+    //method used to return all of the images in the database from the images table
     fun getAllImages(): ArrayList<Image> {
 
         val imageList = ArrayList<Image>()

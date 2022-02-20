@@ -10,8 +10,7 @@
     <string name="light_sensor">Light Sensor</string>
     <string name="vibration_tool">Vibration Tool</string>
     <string name="language">Change Language</string>
-    <string name="darkmode">Dark Mode</string>
-    <string name="lightmode">Light Mode</string>
+    <string name="theme">Theme</string>
     <string name="about_us">About Us</string>
     <string name="exit">Exit</string>
     <string name="choose_language">Choose Language</string>

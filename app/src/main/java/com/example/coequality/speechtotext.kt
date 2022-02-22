@@ -42,11 +42,10 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
             { speakOut() }, "com.google.android.tts"
         )
 
-       //set on click action to button
-        findViewById<ImageButton>(R.id.btn_button).setOnClickListener{
+    }
 
-            askSpeechInput()
-        }
+    fun speakIntoMic(view: View){
+        askSpeechInput()
     }
 
     @SuppressWarnings("deprecation")

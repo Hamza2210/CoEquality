@@ -1,45 +1,160 @@
 package com.example.coequality
 
+import android.content.Context
+import android.media.AudioAttributes
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.coequality.R
-import android.os.Vibrator
 import android.os.VibrationEffect
+import android.os.Vibrator
+import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class vibration : AppCompatActivity() {
+
+
+    private val vibrator: Vibrator by lazy {
+        getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_vibration)
 
-        // register the button with the appropriate ID
-        var bComposeVibration = findViewById<Button>(R.id.makeVibrationCompositionButton)
+        findViewById<TextView>(R.id.text_has_vibrator).text = vibrator.hasVibrator().toString()
+        findViewById<TextView>(R.id.text_has_amplitude_control).text =
+            vibrator.hasAmplitudeControl().toString()
 
-        // create instance of the vibrator and initialise it with Vibrator system service
-        val vibrator = getSystemService(VIBRATOR_SERVICE) as Vibrator
+    }
 
-        // handle compose vibration button
-        bComposeVibration.setOnClickListener {
-            // Note: The first element needs to be 0
-            val vibrationWaveFormDurationPattern =
-                longArrayOf(0, 10, 200, 500, 700, 1000, 300, 200, 50, 10)
+    fun constantVibrate(view: View){
+        vibrator.cancel()
+        vibrator.vibrate(2000L)
+    }
 
-            // the vibration of the type custom waveforms needs the API version 26
+    fun patternVibration(view: View){
+        val pattern = longArrayOf(0, 100, 1000, 300, 200, 100, 500, 200, 100)
+        vibrator.cancel()
+        vibrator.vibrate(pattern, -1)
+    }
 
+    fun patternVibrationRepeat(view: View){
+        val pattern = longArrayOf(0, 100, 1000, 300, 200, 100, 500, 200, 100)
+        vibrator.cancel()
+        vibrator.vibrate(pattern, 0)
+    }
 
-                // create VibrationEffect instance and createWaveform of vibrationWaveFormDurationPattern
-                // -1 here is the parameter which indicates that the vibration shouldn't be repeated.
-                val vibrationEffect =
-                    VibrationEffect.createWaveform(vibrationWaveFormDurationPattern, -1)
+    fun singleVibrate(view: View){
+        vibrator.cancel()
+        vibrator.vibrate(
+            VibrationEffect.createOneShot(2000L, VibrationEffect.DEFAULT_AMPLITUDE)
+        )
+    }
 
-                // it is safe to cancel all the vibration taking place currently
+    fun singleLowAmplitude(view: View){
+        vibrator.cancel()
+        vibrator.vibrate(
+            VibrationEffect.createOneShot(2000L, 1)
+        )
+    }
+
+    fun singleMidAmplitude(view: View){
+        vibrator.cancel()
+        vibrator.vibrate(
+            VibrationEffect.createOneShot(2000L, 127)
+        )
+    }
+
+    fun singleMaxAmplitude(view: View){
+        vibrator.cancel()
+        vibrator.vibrate(
+            VibrationEffect.createOneShot(2000L, 255)
+        )
+    }
+
+    fun predefineTick(view: View){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (isEffectSupported(VibrationEffect.EFFECT_TICK)) {
                 vibrator.cancel()
-
-                // now initiate the vibration of the device
-                vibrator.vibrate(vibrationEffect)
+                vibrator.vibrate(
+                    VibrationEffect.createPredefined(VibrationEffect.EFFECT_TICK)
+                )
+            } else {
+                makeToast("EFFECT_TICK is not supported")
             }
+        } else {
+            makeToast("Min SDK Version: 29")
         }
+    }
+
+    fun predefineClick(view: View){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (isEffectSupported(VibrationEffect.EFFECT_CLICK)) {
+                vibrator.cancel()
+                vibrator.vibrate(
+                    VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
+                )
+            } else {
+                makeToast("EFFECT_CLICK is not supported")
+            }
+        } else {
+            makeToast("Min SDK Version: 29")
+        }
+    }
+
+    fun predefineHeavyClick(view: View){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (isEffectSupported(VibrationEffect.EFFECT_HEAVY_CLICK)) {
+                vibrator.cancel()
+                vibrator.vibrate(
+                    VibrationEffect.createPredefined(VibrationEffect.EFFECT_HEAVY_CLICK)
+                )
+            } else {
+                makeToast("EFFECT_HEAVY_CLICK is not supported")
+            }
+        } else {
+            makeToast("Min SDK Version: 29")
+        }
+    }
+
+    // C.3. Waveform Vibration
+    fun waveformVibration(view: View){
+        val pattern = longArrayOf(0, 100, 1000, 300, 200, 100, 500, 200, 100)
+        vibrator.cancel()
+        vibrator.vibrate(VibrationEffect.createWaveform(pattern, -1))
+    }
+
+    fun waveformAmplitudes(view: View){
+        val pattern = longArrayOf(0, 100, 1000, 300, 200, 100, 500, 200, 100)
+        val amplitudes = intArrayOf(0, 255, 0, 127, 0, 100, 0, 255, 0)
+        vibrator.cancel()
+        vibrator.vibrate(VibrationEffect.createWaveform(pattern, amplitudes, -1))
+    }
+
+    private fun isEffectSupported(effectId: Int): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            vibrator.areAllEffectsSupported(effectId) == Vibrator.VIBRATION_EFFECT_SUPPORT_YES
+        } else {
+            // Assume the effect is supported
+            true
+        }
+    }
+
+    private fun isPrimitiveSupported(primitiveId: Int): Boolean {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            vibrator.areAllPrimitivesSupported(primitiveId)
+        } else {
+            // Assume the primitive is supported
+            true
+        }
+    }
+
+    private fun makeToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
 
 }

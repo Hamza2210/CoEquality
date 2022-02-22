@@ -37,11 +37,13 @@ class toolselect : AppCompatActivity() {
     fun goToLightSensor(view: View) {
         val intent = Intent(this, lightsensor::class.java)
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun goToSpeechText(view: View) {
         val intent = Intent(this, speechtotext::class.java)
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun onExit(view: View) {
@@ -51,21 +53,25 @@ class toolselect : AppCompatActivity() {
     fun goToVibrate(view: View) {
         val intent = Intent(this, vibration::class.java)
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun goToPictureVoice(view: View) {
         val intent = Intent(this, picturevoice::class.java)
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun goToImageRecognition(view: View) {
         val intent = Intent(this, imagerecognition::class.java)
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun chooseTheme(view: View){
         val intent = Intent(this, lightdark::class.java)
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun aboutDialog(view: View) {

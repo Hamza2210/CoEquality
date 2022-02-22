@@ -78,6 +78,7 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
     fun returnToMenu(view: View){
         val intent = Intent(this, toolselect::class.java)
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     override fun onInit(status: Int) {

@@ -37,7 +37,9 @@ class mainmenu : AppCompatActivity() {
     fun goToToolSelect(view: View){
         val intent = Intent(this, toolselect::class.java)
         startActivity(intent)
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
+
 
     private fun setLocale(lang: String?) {
         val locale = Locale(lang)

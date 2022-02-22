@@ -36,6 +36,7 @@ class animatestartup : AppCompatActivity(), OnInitListener {
         Handler(Looper.getMainLooper()).postDelayed({
             val i = Intent(applicationContext, mainmenu::class.java)
             startActivity(i)
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
             finish()
         }, 2500)
     }

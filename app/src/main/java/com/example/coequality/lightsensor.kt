@@ -26,17 +26,6 @@ class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnIni
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lightsensor)
 
-        val sharedPreferences = getSharedPreferences("night", 0)
-
-        val booleanValue = sharedPreferences.getBoolean("night_mode", true)
-
-        if (booleanValue) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-        }
-        else{
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        }
-
         tts = TextToSpeech(
             applicationContext,
             { speakOut() }, "com.google.android.tts"

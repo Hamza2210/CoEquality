@@ -1,268 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".vibration">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="159dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="90dp"
+        android:onClick="constantVibrate"
+        android:text="Vibrate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/linearLayoutCompat">
+        android:layout_marginTop="52dp"
+        android:onClick="patternVibration"
+        android:text="pattern"
+        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:layout_conversion_absoluteHeight="19dp"
-            tools:layout_editor_absoluteY="0dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="119dp">
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:onClick="patternVibrationRepeat"
+        android:text="REPEAT IT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Has Vibrator?"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_editor_absoluteY="0dp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_conversion_absoluteWidth="85dp" />
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:onClick="singleLowAmplitude"
+        android:text="Minimum Amp (1)"
+        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
-            <TextView
-                android:id="@+id/text_has_vibrator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="TRUE"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_editor_absoluteY="0dp"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_conversion_absoluteWidth="34dp" />
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:onClick="singleMidAmplitude"
+        android:text="Medium AMP (127)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button8"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="singleMaxAmplitude"
+        android:text="MAXIMUM AMP (255)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:layout_conversion_absoluteHeight="19dp"
-            tools:layout_editor_absoluteY="19dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="182dp">
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="predefineTick"
+        android:text="TICK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button12"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Has Amplitude Control?"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_editor_absoluteY="19dp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_conversion_absoluteWidth="148dp" />
+    <Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="39dp"
+        android:onClick="predefineClick"
+        android:text="CLICK"
+        app:layout_constraintEnd_toStartOf="@+id/button11"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button10" />
 
-            <TextView
-                android:id="@+id/text_has_amplitude_control"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="TRUE"
-                tools:layout_conversion_absoluteHeight="19dp"
-                tools:layout_editor_absoluteY="19dp"
-                tools:layout_editor_absoluteX="148dp"
-                tools:layout_conversion_absoluteWidth="34dp" />
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="predefineHeavyClick"
+        android:text="HEAVY CLICK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button12" />
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
+    <Button
+        android:id="@+id/button14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="waveformVibration"
+        android:text="WAVEFORM"
+        app:layout_constraintEnd_toStartOf="@+id/button15"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button13" />
 
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="A. Constant Vibration"
-            tools:layout_conversion_absoluteHeight="27dp"
-            tools:layout_editor_absoluteY="39dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="199dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_constant"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="constantVibrate"
-            android:text="Vibrate!"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="102dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="66dp" />
-
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="B. Pattern Vibration"
-            tools:layout_conversion_absoluteHeight="27dp"
-            tools:layout_editor_absoluteY="162dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="182dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_pattern"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="patternVibration"
-            android:text="Vibrate!"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="102dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="189dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_pattern_repeat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="patternVibrationRepeat"
-            android:text="Vibrate Repeat"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="160dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="237dp" />
-
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="C. Effect Vibration"
-            tools:layout_conversion_absoluteHeight="27dp"
-            tools:layout_editor_absoluteY="333dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="170dp" />
-
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Body2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="C.1. One shot vibration"
-            tools:layout_conversion_absoluteHeight="19dp"
-            tools:layout_editor_absoluteY="360dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="147dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_one_shot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="singleVibrate"
-            android:text="Vibrate!"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="102dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="379dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_one_shot_min_amplitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="singleLowAmplitude"
-            android:text="Vibrate Min Amplitude (1)"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="250dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="427dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_one_shot_mid_amplitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="singleMidAmplitude"
-            android:text="Vibrate Mid Amplitude (127)"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="268dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="475dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_one_shot_max_amplitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="singleMaxAmplitude"
-            android:text="Vibrate Max Amplitude (255)"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="273dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="523dp" />
-
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Body2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="C.2. Predefined vibration"
-            tools:layout_conversion_absoluteHeight="19dp"
-            tools:layout_editor_absoluteY="571dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="160dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_predefined_tick"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="predefineTick"
-            android:text="Tick"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="88dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="591dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_predefined_click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="predefineClick"
-            android:text="Click"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="88dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="639dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_predefined_heavy_click"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="predefineHeavyClick"
-            android:text="Heavy Click"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="133dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="735dp" />
-
-        <TextView
-            style="@style/TextAppearance.MaterialComponents.Body2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="C.3. Waveform vibration"
-            tools:layout_conversion_absoluteHeight="19dp"
-            tools:layout_editor_absoluteY="783dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_conversion_absoluteWidth="156dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_waveform"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="waveformVibration"
-            android:text="Vibrate!"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="102dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="802dp" />
-
-        <Button
-            android:id="@+id/button_vibrate_effect_waveform_amplitudes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="waveformAmplitudes"
-            android:text="Vibrate Amplitudes"
-            tools:layout_conversion_absoluteHeight="48dp"
-            tools:layout_conversion_absoluteWidth="199dp"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="850dp" />
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-</ScrollView>
+    <Button
+        android:id="@+id/button15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="waveformAmplitudes"
+        android:text="WAVEFORM AMPS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button14"
+        app:layout_constraintTop_toBottomOf="@+id/button13" />
+</androidx.constraintlayout.widget.ConstraintLayout>

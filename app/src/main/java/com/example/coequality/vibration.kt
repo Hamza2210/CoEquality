@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -14,6 +15,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class vibration : AppCompatActivity() {
+
+    var tts: TextToSpeech? = null
 
 
     @Suppress("DEPRECATION")
@@ -24,6 +27,10 @@ class vibration : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vibration)
+
+        tts = TextToSpeech(applicationContext,
+            { speakOut() }, "com.google.android.tts"
+        )
 
     }
 
@@ -45,13 +52,6 @@ class vibration : AppCompatActivity() {
         val pattern = longArrayOf(0, 100, 1000, 300, 200, 100, 500, 200, 100)
         vibrator.cancel()
         vibrator.vibrate(pattern, 0)
-    }
-
-    fun singleVibrate(view: View){
-        vibrator.cancel()
-        vibrator.vibrate(
-            VibrationEffect.createOneShot(2000L, VibrationEffect.DEFAULT_AMPLITUDE)
-        )
     }
 
     fun singleLowAmplitude(view: View){
@@ -120,7 +120,7 @@ class vibration : AppCompatActivity() {
         }
     }
 
-    // C.3. Waveform Vibration
+
     fun waveformVibration(view: View){
         val pattern = longArrayOf(0, 100, 1000, 300, 200, 100, 500, 200, 100)
         vibrator.cancel()
@@ -145,6 +145,19 @@ class vibration : AppCompatActivity() {
 
     private fun makeToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun speakOut() {
+        val text = "Vibration Tool"
+        tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null,"")
+    }
+
+    override fun onDestroy() {
+        if (tts != null) {
+            tts!!.stop()
+            tts!!.shutdown()
+        }
+        super.onDestroy()
     }
 
     override fun onBackPressed() {

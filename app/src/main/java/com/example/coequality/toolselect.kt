@@ -157,5 +157,12 @@ class toolselect : AppCompatActivity() {
         setLocale(language)
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+
+    }
+
 
 }

@@ -89,6 +89,13 @@ class picturevoice : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+
+    }
+
     fun displayAndSay1(view: View){
 
         val myImage: ByteArray = imageList[imageIndex].image

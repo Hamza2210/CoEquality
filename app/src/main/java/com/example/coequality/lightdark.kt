@@ -29,6 +29,13 @@ class lightdark : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+
+    }
+
     fun changeTheme(view: View){
 
         var imageView = findViewById<ImageView>(R.id.imageView)

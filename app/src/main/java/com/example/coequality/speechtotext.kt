@@ -111,4 +111,11 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
         super.onDestroy()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+
+    }
+
 }

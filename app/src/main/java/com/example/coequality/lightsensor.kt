@@ -7,6 +7,7 @@ import android.hardware.SensorManager
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
+import android.view.MenuItem
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -117,7 +118,15 @@ class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnIni
         }
         super.onDestroy()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+
+    }
 }
+
 
 /*private fun brightness(brightness: Float): String {
 

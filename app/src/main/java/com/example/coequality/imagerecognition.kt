@@ -167,6 +167,13 @@ class imagerecognition : AppCompatActivity() {
         super.onDestroy()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+
+    }
+
     fun imageResultSay(view: View) {
         val text = findViewById<TextView>(R.id.imageResult).text.toString()
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null, "")

@@ -15,9 +15,9 @@ class lightdark : AppCompatActivity() {
         setContentView(R.layout.activity_lightdark)
 
 
-        var imageView = findViewById<ImageView>(R.id.imageView)
-        var themeChange = findViewById<SwitchCompat>(R.id.switchCompat)
-        var sharedPrefs = getSharedPreferences("night", 0)
+        val imageView = findViewById<ImageView>(R.id.imageView)
+        val themeChange = findViewById<SwitchCompat>(R.id.switchCompat)
+        val sharedPrefs = getSharedPreferences("night", 0)
 
         val booleanValue = sharedPrefs.getBoolean("night_mode", true)
 
@@ -38,25 +38,25 @@ class lightdark : AppCompatActivity() {
 
     fun changeTheme(view: View){
 
-        var imageView = findViewById<ImageView>(R.id.imageView)
-        var themeChange = findViewById<SwitchCompat>(R.id.switchCompat)
-        var sharedPrefs = getSharedPreferences("night", 0)
+        val imageView = findViewById<ImageView>(R.id.imageView)
+        val themeChange = findViewById<SwitchCompat>(R.id.switchCompat)
+        val sharedPrefs = getSharedPreferences("night", 0)
 
         if (themeChange.isChecked) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            themeChange.setChecked(true)
+            themeChange.isChecked = true
             imageView.setImageResource(R.drawable.night)
             val editor = sharedPrefs.edit()
             editor.putBoolean("night_mode", true)
-            editor.commit()
+            editor.apply()
 
         } else if (!themeChange.isChecked) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            themeChange.setChecked(false)
+            themeChange.isChecked = false
             imageView.setImageResource(R.drawable.day)
             val editor = sharedPrefs.edit()
             editor.putBoolean("night_mode", false)
-            editor.commit()
+            editor.apply()
         }
 
         //recreate()

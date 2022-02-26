@@ -40,7 +40,7 @@ class mainmenu : AppCompatActivity() {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
-
+    @Suppress("DEPRECATION")
     private fun setLocale(lang: String?) {
         val locale = Locale(lang)
         Locale.setDefault(locale)

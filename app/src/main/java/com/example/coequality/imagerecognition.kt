@@ -95,11 +95,13 @@ class imagerecognition : AppCompatActivity() {
 
     }
 
+    @Suppress("DEPRECATION")
     fun goToCamera(view: View){
         val camera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         startActivityForResult(camera, 200)
     }
 
+    @Suppress("DEPRECATION")
     fun goToGallery(view: View) {
         Log.d("mssg", "button pressed")
         val intent = Intent(Intent.ACTION_GET_CONTENT)
@@ -109,6 +111,7 @@ class imagerecognition : AppCompatActivity() {
 
     }
 
+    @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 

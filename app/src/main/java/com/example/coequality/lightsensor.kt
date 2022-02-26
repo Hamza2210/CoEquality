@@ -26,7 +26,7 @@ class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnIni
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lightsensor)
 
-        var sharedPreferences = getSharedPreferences("night", 0)
+        val sharedPreferences = getSharedPreferences("night", 0)
 
         val booleanValue = sharedPreferences.getBoolean("night_mode", true)
 

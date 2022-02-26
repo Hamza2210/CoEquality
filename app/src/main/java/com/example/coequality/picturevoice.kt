@@ -317,24 +317,6 @@ class picturevoice : AppCompatActivity() {
     }
 
 
-
-    fun onInit(status: Int) {
-
-        if (status == TextToSpeech.SUCCESS) {
-            // set US English as language for tts
-            val result = tts!!.setLanguage(Locale.getDefault())
-
-            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                Log.e("TTS", "The Language specified is not supported!")
-            } else {
-            }
-
-        } else {
-            Log.e("TTS", "Initilization Failed!")
-        }
-
-    }
-
     private fun speakOut() {
         val text = "Picture Voice"
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null,"")

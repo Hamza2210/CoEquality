@@ -48,7 +48,7 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
         askSpeechInput()
     }
 
-    @SuppressWarnings("deprecation")
+    @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -60,7 +60,7 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
         }
     }
 
-    @SuppressWarnings("deprecation")
+    @Suppress("DEPRECATION")
     private fun askSpeechInput(){
         //Ensures the device has speech recognition capabilities
         if(!SpeechRecognizer.isRecognitionAvailable(this)){

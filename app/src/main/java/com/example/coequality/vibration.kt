@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 class vibration : AppCompatActivity() {
 
 
+    @Suppress("DEPRECATION")
     private val vibrator: Vibrator by lazy {
         getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     }
@@ -24,23 +25,22 @@ class vibration : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vibration)
 
-        findViewById<TextView>(R.id.text_has_vibrator).text = vibrator.hasVibrator().toString()
-        findViewById<TextView>(R.id.text_has_amplitude_control).text =
-            vibrator.hasAmplitudeControl().toString()
-
     }
 
+    @Suppress("DEPRECATION")
     fun constantVibrate(view: View){
         vibrator.cancel()
         vibrator.vibrate(2000L)
     }
 
+    @Suppress("DEPRECATION")
     fun patternVibration(view: View){
         val pattern = longArrayOf(0, 100, 1000, 300, 200, 100, 500, 200, 100)
         vibrator.cancel()
         vibrator.vibrate(pattern, -1)
     }
 
+    @Suppress("DEPRECATION")
     fun patternVibrationRepeat(view: View){
         val pattern = longArrayOf(0, 100, 1000, 300, 200, 100, 500, 200, 100)
         vibrator.cancel()
@@ -139,15 +139,6 @@ class vibration : AppCompatActivity() {
             vibrator.areAllEffectsSupported(effectId) == Vibrator.VIBRATION_EFFECT_SUPPORT_YES
         } else {
             // Assume the effect is supported
-            true
-        }
-    }
-
-    private fun isPrimitiveSupported(primitiveId: Int): Boolean {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            vibrator.areAllPrimitivesSupported(primitiveId)
-        } else {
-            // Assume the primitive is supported
             true
         }
     }

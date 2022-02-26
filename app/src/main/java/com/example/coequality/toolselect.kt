@@ -140,6 +140,7 @@ class toolselect : AppCompatActivity() {
         languageChoose.show()
     }
 
+    @Suppress("DEPRECATION")
     private fun setLocale(lang: String?) {
         val locale = Locale(lang)
         Locale.setDefault(locale)

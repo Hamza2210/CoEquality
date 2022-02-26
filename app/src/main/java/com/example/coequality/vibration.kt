@@ -150,6 +150,7 @@ class vibration : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
+        vibrator.cancel()
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
 
     }

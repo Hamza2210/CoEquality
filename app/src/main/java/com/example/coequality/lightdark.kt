@@ -59,7 +59,6 @@ class lightdark : AppCompatActivity() {
             editor.apply()
         }
 
-        //recreate()
     }
 
     fun returnToMenu(view: View){

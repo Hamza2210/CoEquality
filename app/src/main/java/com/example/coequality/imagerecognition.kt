@@ -29,13 +29,13 @@ class imagerecognition : AppCompatActivity() {
     lateinit var openCamera: ImageButton
     var tts: TextToSpeech? = null
 
-    fun checkAndRetrievePermissions() {
+    /*fun checkAndRetrievePermissions() {
         if (checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
             requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 100)
         } else {
             Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show()
         }
-    }
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,34 +53,43 @@ class imagerecognition : AppCompatActivity() {
         openCamera = findViewById(R.id.camerabtn)
 
         // handling permissions
-        checkAndRetrievePermissions()
+        //checkAndRetrievePermissions()
     }
 
     fun makePrediction(view: View){
 
-        val labels =
-            application.assets.open("labels.txt").bufferedReader().use { it.readText() }.split("\n")
-        val resized = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
-        val model = MobilenetV110224Quant.newInstance(this)
+        if(imageDisplay.drawable == null){
+            Toast.makeText(this, "Please select an image", Toast.LENGTH_SHORT).show()
+            tts!!.speak("Please select an image", TextToSpeech.QUEUE_FLUSH, null, "")
+        }
+        else {
 
-        val tBuffer = TensorImage.fromBitmap(resized)
-        val byteBuffer = tBuffer.buffer
+            val labels =
+                application.assets.open("labels.txt").bufferedReader().use { it.readText() }
+                    .split("\n")
+            val resized = Bitmap.createScaledBitmap(bitmap, 224, 224, true)
+            val model = MobilenetV110224Quant.newInstance(this)
 
-        // Creates inputs for reference.
-        val inputFeature0 =
-            TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
-        inputFeature0.loadBuffer(byteBuffer)
+            val tBuffer = TensorImage.fromBitmap(resized)
+            val byteBuffer = tBuffer.buffer
 
-        // Runs model inference and gets result.
-        val outputs = model.process(inputFeature0)
-        val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+            // Creates inputs for reference.
+            val inputFeature0 =
+                TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
+            inputFeature0.loadBuffer(byteBuffer)
 
-        val max = getMax(outputFeature0.floatArray)
+            // Runs model inference and gets result.
+            val outputs = model.process(inputFeature0)
+            val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-        txtResult.text = labels[max]
+            val max = getMax(outputFeature0.floatArray)
 
-        // Releases model resources if no longer used.
-        model.close()
+            txtResult.text = labels[max]
+
+            // Releases model resources if no longer used.
+            model.close()
+        }
+
 
     }
 
@@ -107,7 +116,10 @@ class imagerecognition : AppCompatActivity() {
         if (requestCode == 250) {
             imageDisplay.setImageURI(data?.data)
 
+
             val uri: Uri? = data?.data
+
+            //retrieving the uri image that is stored within the data variable
             bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, uri)
         } else if (requestCode == 200 && resultCode == Activity.RESULT_OK) {
             bitmap = data?.extras?.get("data") as Bitmap
@@ -116,6 +128,7 @@ class imagerecognition : AppCompatActivity() {
 
     }
 
+   //method which iterates through thd 1000 categories of assets and returns inference match
     fun getMax(arr: FloatArray): Int {
         var ind = 0
         var min = 0.0f

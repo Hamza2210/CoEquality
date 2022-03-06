@@ -33,9 +33,6 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
 
     }
 
-    fun speakIntoMic(view: View){
-        askSpeechInput()
-    }
 
     @Suppress("DEPRECATION")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -50,7 +47,7 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
     }
 
     @Suppress("DEPRECATION")
-    private fun askSpeechInput(){
+    fun askSpeechInput(view: View){
         //Ensures the device has speech recognition capabilities
         if(!SpeechRecognizer.isRecognitionAvailable(this)){
             Toast.makeText(this, "Unable to recognise speech", Toast.LENGTH_SHORT).show()
@@ -73,7 +70,6 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
     override fun onInit(status: Int) {
 
         if (status == TextToSpeech.SUCCESS) {
-            // set US English as language for tts
             val result = tts!!.setLanguage(Locale.getDefault())
 
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -106,5 +102,6 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
 
     }
+
 
 }

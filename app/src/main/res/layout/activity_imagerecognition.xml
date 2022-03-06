@@ -28,10 +28,10 @@
         android:text="make prediction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintVertical_bias="0.696" />
 
     <TextView
         android:id="@+id/imageResult"
@@ -46,25 +46,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.556" />
 
-    <Button
-        android:id="@+id/buttonSay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:onClick="imageResultSay"
-        android:text="SAY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
     <ImageButton
         android:id="@+id/button"
         android:layout_width="113dp"
         android:layout_height="103dp"
-        android:layout_marginStart="56dp"
         android:layout_marginTop="28dp"
         android:onClick="goToGallery"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageResult"
         app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
@@ -73,12 +62,24 @@
         android:id="@+id/camerabtn"
         android:layout_width="113dp"
         android:layout_height="103dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="41dp"
         android:onClick="goToCamera"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/imageResult"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
         app:srcCompat="@drawable/ic_baseline_camera_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="128dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="63dp"
+        android:onClick="imageResultSay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/camerabtn"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:srcCompat="@drawable/ic_baseline_campaign_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

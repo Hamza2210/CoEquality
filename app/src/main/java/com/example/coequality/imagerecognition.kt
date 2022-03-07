@@ -63,7 +63,6 @@ class imagerecognition : AppCompatActivity() {
             tts!!.speak("Please select an image", TextToSpeech.QUEUE_FLUSH, null, "")
         }
         else {
-
             val labels =
                 application.assets.open("labels.txt").bufferedReader().use { it.readText() }
                     .split("\n")
@@ -77,16 +76,13 @@ class imagerecognition : AppCompatActivity() {
             val inputFeature0 =
                 TensorBuffer.createFixedSize(intArrayOf(1, 224, 224, 3), DataType.UINT8)
             inputFeature0.loadBuffer(byteBuffer)
-
             // Runs model inference and gets result.
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
             val max = getMax(outputFeature0.floatArray)
-
             txtResult.text = labels[max]
 
-            // Releases model resources if no longer used.
             model.close()
         }
 

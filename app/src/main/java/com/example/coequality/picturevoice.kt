@@ -96,8 +96,7 @@ class picturevoice : AppCompatActivity() {
             .setTitle("Eat")
             .setPositiveButton(android.R.string.ok
             ) { _, _ ->
-                // Continue with delete operation
-            } // A null listener allows the button to dismiss the dialog and take no further action.
+            }
             .setIcon(android.R.drawable.btn_star)
             .setView(image)
             .show()

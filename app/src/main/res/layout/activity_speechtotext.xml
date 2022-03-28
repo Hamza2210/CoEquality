@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,42 +8,26 @@
     android:layout_height="match_parent"
     tools:context=".speechtotext">
 
-    <ImageButton
-        android:id="@+id/btn_button"
-        android:layout_width="134dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="96dp"
-        android:background="@drawable/rounded_corners"
-        android:onClick="askSpeechInput"
-        android:padding="28dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/microphone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <TextView
         android:id="@+id/output"
-        android:layout_width="wrap_content"
-        android:layout_height="133dp"
+        android:layout_width="407dp"
+        android:layout_height="386dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="80dp"
         android:text="@string/text_will_appear_here"
+        android:textAlignment="center"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_button" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnReturn"
         android:layout_width="160dp"
         android:layout_height="65dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="144dp"
         android:background="@drawable/rounded_corners"
         android:onClick="returnToMenu"
         android:text="RETURN TO SELECT"
@@ -50,5 +35,43 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/output" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="118dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_button"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/output"
+        app:srcCompat="@drawable/arrow" />
+
+    <ImageButton
+        android:id="@+id/btn_button"
+        android:layout_width="109dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/border"
+        android:onClick="askSpeechInput"
+        android:padding="28dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/microphone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/output"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="118dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="20dp"
+        android:scaleX="-1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toEndOf="@+id/btn_button"
+        app:layout_constraintTop_toBottomOf="@+id/output"
+        app:srcCompat="@drawable/arrow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.text.InputType
+import android.view.Gravity
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
@@ -108,6 +109,7 @@ class toolselect : AppCompatActivity() {
             }
         }
         builder.setNegativeButton("Cancel") { dialog, which -> dialog.cancel() }
+        confirmPassword.gravity = Gravity.CENTER
 
         builder.show()
     }

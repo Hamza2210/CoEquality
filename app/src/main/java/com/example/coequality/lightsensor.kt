@@ -81,7 +81,7 @@ class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnIni
     override fun onInit(status: Int) {
 
         if (status == TextToSpeech.SUCCESS) {
-            // set US English as language for tts
+            // set device default language as language for tts
             val result = tts!!.setLanguage(Locale.getDefault())
 
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -115,16 +115,3 @@ class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnIni
 
     }
 }
-
-
-/*private fun brightness(brightness: Float): String {
-
-        return when (brightness.toInt()) {
-            0 -> "Pitch black"
-            in 1..10 -> "Dark"
-            in 11..50 -> "Grey"
-            in 51..5000 -> "Normal"
-            in 5001..25000 -> "Incredibly bright"
-            else -> "This light will blind you"
-        }
-    }*/

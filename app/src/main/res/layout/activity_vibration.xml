@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:theme="@style/Theme.AppCompat.DayNight"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".vibration">
 
 
@@ -12,10 +18,22 @@
         android:layout_width="159dp"
         android:layout_height="57dp"
         android:layout_marginTop="90dp"
+        android:backgroundTint="@color/red"
         android:onClick="constantVibrate"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="Vibrate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="172dp"
+        android:background="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,10 +42,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
+        android:backgroundTint="@color/darkblue"
         android:onClick="patternVibration"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="pattern"
         app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="120dp"
+        android:background="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
 
@@ -36,7 +67,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
+        android:backgroundTint="@color/darkblue"
         android:onClick="patternVibrationRepeat"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="REPEAT IT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -48,7 +81,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
+        android:backgroundTint="@color/midblue"
         android:onClick="singleLowAmplitude"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="Minimum Amp (1)"
         app:layout_constraintEnd_toStartOf="@+id/button9"
         app:layout_constraintHorizontal_bias="0.5"
@@ -60,7 +95,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="46dp"
+        android:backgroundTint="@color/midblue"
         android:onClick="singleMidAmplitude"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="Medium AMP (127)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -72,10 +109,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:backgroundTint="@color/midblue"
         android:onClick="singleMaxAmplitude"
         android:text="MAXIMUM AMP (255)"
+        android:textColor="?android:attr/textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="92dp"
+        android:background="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button8" />
 
@@ -84,7 +134,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:backgroundTint="@color/green"
         android:onClick="predefineTick"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="TICK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -95,8 +147,10 @@
         android:id="@+id/button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/green"
         android:onClick="predefineClick"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="CLICK"
         app:layout_constraintEnd_toStartOf="@+id/button11"
         app:layout_constraintHorizontal_bias="0.5"
@@ -108,22 +162,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green"
         android:onClick="predefineHeavyClick"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="HEAVY CLICK"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button12" />
 
+
     <Button
         android:id="@+id/button14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="@color/pink"
         android:onClick="waveformVibration"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="WAVEFORM"
         app:layout_constraintEnd_toStartOf="@+id/button15"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button13" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toStartOf="@+id/button15"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button13" />
 
@@ -131,11 +200,30 @@
         android:id="@+id/button15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="@color/pink"
         android:onClick="waveformAmplitudes"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="WAVEFORM AMPS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button14"
         app:layout_constraintTop_toBottomOf="@+id/button13" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="casual"
+        android:text="@string/vibration_tool"
+        android:textFontWeight="2"
+        android:textSize="24sp"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

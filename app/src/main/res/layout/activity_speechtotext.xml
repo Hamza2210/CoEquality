@@ -14,6 +14,7 @@
         android:layout_height="386dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:gravity="center"
         android:text="@string/text_will_appear_here"
         android:textAlignment="center"
         android:textColor="?android:attr/textColorPrimary"

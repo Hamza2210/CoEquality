@@ -23,19 +23,21 @@
 
             <TextView
                 android:id="@+id/txtTitle"
-                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/kaushan_script"
                 android:text="CoEquality"
                 android:textColor="?android:attr/textColorPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="24sp" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/txtTitle"
-                android:textSize="22sp"
+                android:fontFamily="@font/kaushan_script"
                 android:text="@string/please_select_an_activity"
                 android:textColor="?android:attr/textColorPrimary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="22sp" />
 
         </RelativeLayout>
 
@@ -77,6 +79,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="goToLightSensor"
                         android:text="@string/light_sensor"
                         android:textColor="?android:attr/textColorPrimary"
@@ -118,6 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="goToSpeechText"
                         android:text="@string/speech_to_text"
                         android:textColor="?android:attr/textColorPrimary"
@@ -155,6 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="goToPictureVoice"
                         android:text="@string/picture_voice"
                         android:textColor="?android:attr/textColorPrimary"
@@ -192,6 +197,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="goToVibrate"
                         android:text="@string/vibration_tool"
                         android:textColor="?android:attr/textColorPrimary"
@@ -230,6 +236,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="goToImageRecognition"
                         android:text="@string/identify_image"
                         android:textColor="?android:attr/textColorPrimary"
@@ -267,6 +274,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="showLanguageDialog"
                         android:text="@string/language"
                         android:textColor="?android:attr/textColorPrimary"
@@ -304,6 +312,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="aboutDialog"
                         android:text="@string/about_us"
                         android:textColor="?android:attr/textColorPrimary"
@@ -342,6 +351,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="chooseTheme"
                         android:text="@string/theme"
                         android:textColor="?android:attr/textColorPrimary"
@@ -381,8 +391,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="@string/reset"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="resetApp"
+                        android:text="@string/reset"
                         android:textColor="?android:attr/textColorPrimary"
                         android:textSize="18sp" />
 
@@ -420,6 +431,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
+                        android:fontFamily="@font/kaushan_script"
                         android:onClick="onExit"
                         android:text="@string/exit"
                         android:textColor="?android:attr/textColorPrimary"

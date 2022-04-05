@@ -9,26 +9,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".mainmenu">
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="266dp"
-            android:layout_height="259dp"
-            android:layout_marginTop="160dp"
-            android:contentDescription="@string/todo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/logo_foreground" />
 
         <TextView
             android:id="@+id/menuTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
+            android:fontFamily="@font/kaushan_script"
+            android:includeFontPadding="false"
             android:text="@string/coequality"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="34sp"
@@ -40,24 +30,39 @@
             android:id="@+id/buttonStart"
             android:layout_width="259dp"
             android:layout_height="67dp"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="336dp"
+            android:fontFamily="@font/kaushan_script"
             android:onClick="goToToolSelect"
+            android:background="@drawable/rounded_corners"
             android:text="@string/start"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo" />
+            app:layout_constraintTop_toBottomOf="@+id/menuTitle" />
 
         <Button
             android:id="@+id/buttonExit"
             android:layout_width="167dp"
             android:layout_height="66dp"
-            android:layout_marginTop="68dp"
-            android:layout_marginEnd="120dp"
+            android:layout_marginTop="39dp"
+            android:fontFamily="@font/kaushan_script"
             android:onClick="exitApp"
+            android:background="@drawable/rounded_corners"
             android:text="@string/exit"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonStart" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="227dp"
+            android:layout_height="233dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/menuTitle"
+            app:srcCompat="@drawable/logo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

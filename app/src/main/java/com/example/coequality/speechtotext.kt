@@ -67,6 +67,10 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
+    fun clear(view: View){
+        findViewById<TextView>(output).text = " "
+    }
+
     override fun onInit(status: Int) {
 
         if (status == TextToSpeech.SUCCESS) {

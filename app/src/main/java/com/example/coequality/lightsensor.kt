@@ -1,5 +1,6 @@
 package com.example.coequality
 
+import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -9,8 +10,11 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.MenuItem
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import java.util.*
 
 class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnInitListener {
@@ -51,12 +55,14 @@ class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnIni
         if (event!!.values[0] > 20) {
             if (bulb) {
                 image?.setImageResource(R.drawable.bulboff)
+                findViewById<ConstraintLayout>(R.id.relLayout).setBackgroundColor(Color.DKGRAY)
                 bulb = false
             } else {
                 return
             }
         } else {
             bulb = true
+            findViewById<ConstraintLayout>(R.id.relLayout).setBackgroundColor(Color.WHITE)
             image?.setImageResource(R.drawable.bulbon)
         }
 

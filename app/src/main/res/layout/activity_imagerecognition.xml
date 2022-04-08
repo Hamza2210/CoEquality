@@ -1,87 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:theme="@style/Theme.AppCompat.DayNight"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".imagerecognition">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="373dp"
-        android:layout_height="329dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.421"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039"
-        tools:srcCompat="@tools:sample/avatars" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".imagerecognition">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#8BC34A"
-        android:fontFamily="@font/kaushan_script"
-        android:onClick="makePrediction"
-        android:text="make prediction"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="373dp"
+            android:layout_height="329dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.421"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.039"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/imageResult"
-        android:layout_width="337dp"
-        android:layout_height="34dp"
-        android:fontFamily="@font/kaushan_script"
-        android:text="select image and press predict button"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.556" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#8BC34A"
+            android:fontFamily="@font/kaushan_script"
+            android:onClick="makePrediction"
+            android:text="make prediction"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.907"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.696" />
 
-    <ImageButton
-        android:id="@+id/button"
-        android:layout_width="113dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="28dp"
-        android:onClick="goToGallery"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.602"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageResult"
-        app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
+        <TextView
+            android:id="@+id/imageResult"
+            android:layout_width="337dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="19dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="select image and press predict button"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <ImageButton
-        android:id="@+id/camerabtn"
-        android:layout_width="113dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="32dp"
-        android:onClick="goToCamera"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@drawable/ic_baseline_camera_24" />
+        <ImageButton
+            android:id="@+id/button"
+            android:layout_width="113dp"
+            android:layout_height="103dp"
+            android:layout_marginTop="28dp"
+            android:onClick="goToGallery"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.602"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageResult"
+            app:srcCompat="@drawable/ic_baseline_add_a_photo_24" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="120dp"
-        android:layout_height="103dp"
-        android:layout_marginTop="60dp"
-        android:onClick="imageResultSay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/camerabtn"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:srcCompat="@drawable/ic_baseline_campaign_24" />
+        <ImageButton
+            android:id="@+id/camerabtn"
+            android:layout_width="113dp"
+            android:layout_height="103dp"
+            android:layout_marginTop="32dp"
+            android:onClick="goToCamera"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:srcCompat="@drawable/ic_baseline_camera_24" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="120dp"
+            android:layout_height="103dp"
+            android:layout_marginTop="60dp"
+            android:onClick="imageResultSay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/camerabtn"
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:srcCompat="@drawable/ic_baseline_campaign_24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

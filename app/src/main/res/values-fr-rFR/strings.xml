@@ -30,4 +30,5 @@
         "Reconnaissance d'image : utilitaire utilisé pour identifier les objets qui se distinguent dans une image. Toute image tentera de faire reconnaître l'objet, qu'il soit pris directement de l'appareil photo ou choisi dans la galerie. Utile pour les utilisateurs partiellement aveugles qui ont besoin de voir ce qu'il y a dans une image car il y a aussi une narration"</string>
     <string name="identify_image">Identifier</string>
     <string name="reset">Réinitialiser</string>
+    <string name="return_to_menu">Retourner au menu</string>
 </resources>

@@ -28,4 +28,5 @@
         "Riconoscimento immagine: utilità utilizzata per identificare oggetti distinguibili all'interno di un'immagine. Qualsiasi immagine tenterà di far riconoscere l'oggetto sia che sia stato preso direttamente dalla fotocamera o scelto dalla galleria. Utile per gli utenti con cecità parziale che hanno bisogno di vedere cosa c'è in un'immagine poiché c'è anche la narrazione"</string>
     <string name="identify_image">Identifica</string>
     <string name="reset">Ripristina</string>
+    <string name="return_to_menu">Torna al menu</string>
 </resources>

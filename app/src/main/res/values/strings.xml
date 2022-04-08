@@ -30,4 +30,5 @@
         "Image Recognition: Utility used to identify objects that are distinguishable within an image. Any image will attempt to have the object recognised whether it be taken straight from the camera or chosen from the gallery. Useful for users with partial blindness needing to see whats in an image as there is narration as well"</string>
     <string name="identify_image">Identify Image</string>
     <string name="reset">Reset App</string>
+    <string name="return_to_menu">Return to Menu</string>
 </resources>

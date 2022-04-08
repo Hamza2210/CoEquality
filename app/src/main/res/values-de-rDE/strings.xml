@@ -30,4 +30,5 @@
         "Bilderkennung: Dienstprogramm zum Identifizieren von Objekten, die in einem Bild unterscheidbar sind. Bei jedem Bild wird versucht, das Objekt zu erkennen, unabhängig davon, ob es direkt von der Kamera aufgenommen oder aus der Galerie ausgewählt wurde. Nützlich für Benutzer mit teilweiser Blindheit, die sehen müssen, was in einem Bild ist, da es auch eine Erzählung gibt"</string>
     <string name="identify_image">Identifizieren</string>
     <string name="reset">Neu Starten</string>
+    <string name="return_to_menu">Zurück zum Menü</string>
 </resources>

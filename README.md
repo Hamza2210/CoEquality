@@ -13,11 +13,11 @@ This application contains the following utilities that can be made use of: Light
 4. Image Recognition - Tool used in order to try and identify what object currently resides in an image using edge detection AI. Useful for visually impaired users who find regular viewing difficult
 5. AAC Picture Voice - Tool used to allow for basic communication skills to be learnt for autistic users and children. Contains images which are enlarged and said out loud on click to make it interactable and easy
 
-## Accessibility
+### Accessibility
 1. Light/Dark Mode - This application contains a tile where users can change the theme of the application from light to dark and vice versa
 2. Language - Users can change the language of the application from 4 different options which affects all wording in the application. Useful for users with different nationalities and ethnicities
 
-## Security
+### Security
 Contains a passcode view tied in with an SQLite database to allow for passcodes to be locally stored to enforce security to deter misuse of the application
 
 ## Installation

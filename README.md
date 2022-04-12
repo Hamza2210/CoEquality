@@ -16,3 +16,13 @@ This application contains the following utilities that can be made use of: Light
 ## Accessibility
 1. Light/Dark Mode - This application contains a tile where users can change the theme of the application from light to dark and vice versa
 2. Language - Users can change the language of the application from 4 different options which affects all wording in the application. Useful for users with different nationalities and ethnicities
+
+## Security
+Contains a passcode view tied in with an SQLite database to allow for passcodes to be locally stored to enforce security to deter misuse of the application
+
+## Installation
+- Download ZIP file of CoEquality Project
+- Extract contents of ZIP file to a location on your machine using 7-Zip, WinRAR etc.
+- Start Android Studio
+- Open Project via Android Studio and locate the newly extracted project
+- Run AVD Emulator to start the application or, Connect an Android Device and click Run to run on your own device

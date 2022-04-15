@@ -162,7 +162,8 @@ class toolselect : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        finish()
+        val intent = Intent(this, mainmenu::class.java)
+        startActivity(intent)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
 
     }

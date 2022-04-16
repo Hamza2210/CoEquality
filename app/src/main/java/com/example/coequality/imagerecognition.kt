@@ -29,13 +29,6 @@ class imagerecognition : AppCompatActivity() {
     lateinit var openCamera: ImageButton
     var tts: TextToSpeech? = null
 
-    /*fun checkAndRetrievePermissions() {
-        if (checkSelfPermission(android.Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
-            requestPermissions(arrayOf(android.Manifest.permission.CAMERA), 100)
-        } else {
-            Toast.makeText(this, "Camera permission granted", Toast.LENGTH_SHORT).show()
-        }
-    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,8 +45,6 @@ class imagerecognition : AppCompatActivity() {
         txtResult = findViewById(R.id.imageResult)
         openCamera = findViewById(R.id.camerabtn)
 
-        // handling permissions
-        //checkAndRetrievePermissions()
     }
 
     fun makePrediction(view: View){

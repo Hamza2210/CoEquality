@@ -59,7 +59,7 @@ class animatestartup : AppCompatActivity(), OnInitListener {
     }
 
     private fun speakOut() {
-        val text = "Hello and Welcome! Please select the start button to begin!"
+        val text = "Hello and Welcome!"
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null,"")
     }
 

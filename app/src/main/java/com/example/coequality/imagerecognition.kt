@@ -116,7 +116,7 @@ class imagerecognition : AppCompatActivity() {
     }
 
    //method which iterates through thd 1000 categories of assets and returns inference match
-    fun getMax(arr: FloatArray): Int {
+   private fun getMax(arr: FloatArray): Int {
         var ind = 0
         var min = 0.0f
 

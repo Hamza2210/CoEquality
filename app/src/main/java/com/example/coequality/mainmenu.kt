@@ -23,6 +23,7 @@ class mainmenu : AppCompatActivity() {
             findViewById<ConstraintLayout>(R.id.mainmenu).setBackgroundResource(R.drawable.lightdark_bg)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
+
         else{
             findViewById<ConstraintLayout>(R.id.mainmenu).setBackgroundResource(R.drawable.lightbackground)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)

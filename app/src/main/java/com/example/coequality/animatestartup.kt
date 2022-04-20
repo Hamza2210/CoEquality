@@ -10,6 +10,7 @@ import android.os.Looper
 import android.speech.tts.TextToSpeech
 import android.speech.tts.TextToSpeech.OnInitListener
 import android.util.Log
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import com.example.coequality.mainmenu
@@ -22,6 +23,17 @@ class animatestartup : AppCompatActivity(), OnInitListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Hide the status bar.
+        var newUiOptions: Int = window.decorView.systemUiVisibility
+        newUiOptions = newUiOptions or View.SYSTEM_UI_FLAG_LOW_PROFILE
+        newUiOptions = newUiOptions or View.SYSTEM_UI_FLAG_FULLSCREEN
+        newUiOptions = newUiOptions or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        newUiOptions = newUiOptions or View.SYSTEM_UI_FLAG_IMMERSIVE
+        newUiOptions = newUiOptions or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        window.decorView.systemUiVisibility = newUiOptions
+
+
 
         tts = TextToSpeech(applicationContext,
             { speakOut() }, "com.google.android.tts"

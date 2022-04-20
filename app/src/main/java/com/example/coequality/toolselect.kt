@@ -8,6 +8,7 @@ import android.text.InputType
 import android.view.Gravity
 import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -28,9 +29,11 @@ class toolselect : AppCompatActivity() {
         val booleanValue = sharedPreferences.getBoolean("night_mode", true)
 
         if (booleanValue) {
+            findViewById<LinearLayout>(R.id.toolSelect).setBackgroundResource(R.drawable.lightdark_bg)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
         else{
+            findViewById<LinearLayout>(R.id.toolSelect).setBackgroundResource(R.drawable.lightbackground)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
     }

@@ -5,7 +5,9 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.constraintlayout.widget.ConstraintLayout
 import java.util.*
 
 class mainmenu : AppCompatActivity() {
@@ -18,9 +20,11 @@ class mainmenu : AppCompatActivity() {
         val booleanValue = sharedPreferences.getBoolean("night_mode", true)
 
         if (booleanValue) {
+            findViewById<ConstraintLayout>(R.id.mainmenu).setBackgroundResource(R.drawable.lightdark_bg)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         }
         else{
+            findViewById<ConstraintLayout>(R.id.mainmenu).setBackgroundResource(R.drawable.lightbackground)
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         }
 

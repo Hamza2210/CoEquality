@@ -78,6 +78,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/lightImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:background="@android:color/transparent"
@@ -121,6 +122,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/SpeechImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:onClick="goToSpeechText"
@@ -160,6 +162,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/PictureImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:onClick="goToPictureVoice"
@@ -198,6 +201,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/VibrationImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:onClick="goToVibrate"
@@ -236,6 +240,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/RecognitionImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:onClick="goToImageRecognition"
@@ -275,6 +280,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/LanguageImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:onClick="showLanguageDialog"
@@ -313,6 +319,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/AboutImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:onClick="aboutDialog"
@@ -351,6 +358,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/ThemeImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:onClick="chooseTheme"
@@ -390,6 +398,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/ResetImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:background="@android:color/transparent"
@@ -430,6 +439,7 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/ExitImage"
                         android:layout_width="88dp"
                         android:layout_height="88dp"
                         android:background="@android:color/transparent"

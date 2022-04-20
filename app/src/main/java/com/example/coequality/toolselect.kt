@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.text.InputType
 import android.view.Gravity
 import android.view.View
+import android.view.animation.AnimationUtils
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -39,46 +41,70 @@ class toolselect : AppCompatActivity() {
     }
 
     fun goToLightSensor(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val lightImage = findViewById<ImageView>(R.id.lightImage)
+        lightImage.startAnimation(animation)
         val intent = Intent(this, lightsensor::class.java)
         startActivity(intent)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun goToSpeechText(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val speechImage = findViewById<ImageView>(R.id.SpeechImage)
+        speechImage.startAnimation(animation)
         val intent = Intent(this, speechtotext::class.java)
         startActivity(intent)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun onExit(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val exitImage = findViewById<ImageView>(R.id.ExitImage)
+        exitImage.startAnimation(animation)
         this.finishAffinity()
     }
 
     fun goToVibrate(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val vibrationImage = findViewById<ImageView>(R.id.VibrationImage)
+        vibrationImage.startAnimation(animation)
         val intent = Intent(this, vibration::class.java)
         startActivity(intent)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun goToPictureVoice(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val pictureImage = findViewById<ImageView>(R.id.PictureImage)
+        pictureImage.startAnimation(animation)
         val intent = Intent(this, picturevoice::class.java)
         startActivity(intent)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun goToImageRecognition(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val recogniserImage = findViewById<ImageView>(R.id.RecognitionImage)
+        recogniserImage.startAnimation(animation)
         val intent = Intent(this, imagerecognition::class.java)
         startActivity(intent)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun chooseTheme(view: View){
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val themeImage = findViewById<ImageView>(R.id.ThemeImage)
+        themeImage.startAnimation(animation)
         val intent = Intent(this, lightdark::class.java)
         startActivity(intent)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
     fun aboutDialog(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val aboutImage = findViewById<ImageView>(R.id.AboutImage)
+        aboutImage.startAnimation(animation)
         AlertDialog.Builder(this)
             .setTitle("CoEquality")
             .setMessage(R.string.aboutus)
@@ -92,6 +118,9 @@ class toolselect : AppCompatActivity() {
     }
 
     fun resetApp(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val resetImage = findViewById<ImageView>(R.id.ResetImage)
+        resetImage.startAnimation(animation)
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.confirm_password)
 
@@ -118,6 +147,9 @@ class toolselect : AppCompatActivity() {
     }
 
     fun showLanguageDialog(view: View) {
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        val languageImage = findViewById<ImageView>(R.id.LanguageImage)
+        languageImage.startAnimation(animation)
         val listItems = arrayOf("French", "German", "Italian", "English")
         val builder = androidx.appcompat.app.AlertDialog.Builder(this)
         builder.setTitle(R.string.choose_language)

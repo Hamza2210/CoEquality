@@ -36,7 +36,7 @@
                 android:layout_marginLeft="110dp"
                 android:fontFamily="@font/kaushan_script"
                 android:text="CoEquality"
-                android:textColor="@color/black"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="24sp" />
 
             <TextView
@@ -46,7 +46,7 @@
                 android:layout_marginLeft="65dp"
                 android:fontFamily="@font/kaushan_script"
                 android:text="@string/please_select_an_activity"
-                android:textColor="@color/black"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="22sp" />
 
         </RelativeLayout>

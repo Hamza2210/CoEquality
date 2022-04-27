@@ -27,18 +27,22 @@ class picturevoice : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_picturevoice)
 
+        //method used to call the tts on create and uses the google tts engine
         tts = TextToSpeech(applicationContext,
             { speakOut() }, "com.google.android.tts"
         )
 
         val dbHelper = DataBaseHelper(this)
+
+        //initialise imageLIst variable by retrieving all images within images table of database
         imageList = dbHelper.getAllImages()
 
+        //retrieve index of image from database and applies it to the appropriate imageview on the screen
         var myImage: ByteArray = imageList[imageIndex].image
         var bmp: Bitmap = BitmapFactory.decodeByteArray(myImage, 0, myImage.size)
-
         findViewById<ImageButton>(R.id.imageButton1).setImageBitmap(bmp)
 
+        //retieves the rest of the images from table and applies them to the rest of the imageviews
         myImage = imageList[imageIndex+1].image
         bmp = BitmapFactory.decodeByteArray(myImage, 0, myImage.size)
         findViewById<ImageButton>(R.id.imageButton2).setImageBitmap(bmp)
@@ -85,6 +89,7 @@ class picturevoice : AppCompatActivity() {
 
     }
 
+    //methods used here to output the response based on the click of the imageview
     fun displayAndSay1(view: View){
 
         val myImage: ByteArray = imageList[imageIndex].image
@@ -92,15 +97,18 @@ class picturevoice : AppCompatActivity() {
 
         var image = ImageView(this)
         image.setImageBitmap(bmp)
+        //create dialog box to display enlarged image on click
         AlertDialog.Builder(this)
             .setTitle("Eat")
             .setPositiveButton(android.R.string.ok
             ) { _, _ ->
-            }
+                // Continue with delete operation
+            } // A null listener allows the button to dismiss the dialog and take no further action.
             .setIcon(android.R.drawable.btn_star)
             .setView(image)
             .show()
 
+        //have the tts voice output the name of the image on click
         val text = "Eat"
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null,"")
 

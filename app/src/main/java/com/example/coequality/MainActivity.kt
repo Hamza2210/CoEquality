@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         //Finds the front-end password text box to use
         val passcodeView = findViewById<PasscodeView>(R.id.passcode_view)
 
+        //checks to see if current passcode table is empty
         if (dbHelper.isEmpty()) {
             passcodeView.setPasscodeLength(4).listener = object : PasscodeViewListener {
                 //Displays incorrect password method if password entered is incorrect
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         } else {
+            //if passcode table isnt empty, set the local passcode to the entry saved in the table
             passcodeView.localPasscode = dbHelper.getPasscode().last().passcode
             passcodeView.setPasscodeLength(4).listener = object : PasscodeViewListener {
                 //Displays incorrect password method if password entered is incorrect

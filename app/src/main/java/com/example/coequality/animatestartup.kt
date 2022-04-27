@@ -24,7 +24,7 @@ class animatestartup : AppCompatActivity(), OnInitListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Hide the status bar.
+        // Hides device UI elements to ensure the animation displays in fullscreen for the user
         var newUiOptions: Int = window.decorView.systemUiVisibility
         newUiOptions = newUiOptions or View.SYSTEM_UI_FLAG_LOW_PROFILE
         newUiOptions = newUiOptions or View.SYSTEM_UI_FLAG_FULLSCREEN
@@ -34,17 +34,23 @@ class animatestartup : AppCompatActivity(), OnInitListener {
         window.decorView.systemUiVisibility = newUiOptions
 
 
-
+        //text to speech execution using google android
         tts = TextToSpeech(applicationContext,
             { speakOut() }, "com.google.android.tts"
         )
         setContentView(R.layout.activity_animatestartup)
+
+        //assigns xml animation of heart to zoom variable of type animation
         zoom = AnimationUtils.loadAnimation(applicationContext, R.anim.zoom)
+
+        //finds heart vector that animation consists of
         img = findViewById(R.id.image)
 
+        //start heart animation of zoom
         img?.startAnimation(zoom)
 
 
+        //created handler to start intent to main menu whilst delaying animation by 2500 milliseconds so animation can play
         Handler(Looper.getMainLooper()).postDelayed({
             val i = Intent(applicationContext, mainmenu::class.java)
             startActivity(i)
@@ -53,6 +59,7 @@ class animatestartup : AppCompatActivity(), OnInitListener {
         }, 2500)
     }
 
+    //overriden method to ensure that the locale of the tts is UK and that it is supported in the device
     override fun onInit(status: Int) {
 
         if (status == TextToSpeech.SUCCESS) {
@@ -70,11 +77,13 @@ class animatestartup : AppCompatActivity(), OnInitListener {
 
     }
 
+    //method to declare what speech is being said in the tts
     private fun speakOut() {
         val text = "Hello and Welcome!"
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null,"")
     }
 
+    //method to ensure that the tts stops when no speech is queued
     override fun onDestroy() {
         if (tts != null) {
             tts!!.stop()

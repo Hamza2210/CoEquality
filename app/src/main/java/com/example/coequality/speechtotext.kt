@@ -27,6 +27,7 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_speechtotext)
 
+        //method used to call the tts on create and uses the google tts engine
         tts = TextToSpeech(applicationContext,
             { speakOut() }, "com.google.android.tts"
         )
@@ -61,16 +62,19 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
         }
     }
 
+    //applied to menu button to allow for returning to the tool select menu
     fun returnToMenu(view: View){
         val intent = Intent(this, toolselect::class.java)
         startActivity(intent)
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
+    //applied to the clear button which allows for any pre-existing text to be cleared
     fun clear(view: View){
         findViewById<TextView>(output).text = " "
     }
 
+    //overridden method to initialise the locale of the tts and to ensure tts is supported
     override fun onInit(status: Int) {
 
         if (status == TextToSpeech.SUCCESS) {
@@ -87,11 +91,13 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
 
     }
 
+    //tts voice declaring the activity name when entering the activity (called in OnCreate)
     private fun speakOut() {
         val text = "Speech To Text Tool"
         tts!!.speak(text, TextToSpeech.QUEUE_FLUSH, null,"")
     }
 
+    //overriden method ensuring to stop tts when no text is queued
     override fun onDestroy() {
         if (tts != null) {
             tts!!.stop()
@@ -100,6 +106,7 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
         super.onDestroy()
     }
 
+    //backpress method to allow for fade animation to be added
     override fun onBackPressed() {
         super.onBackPressed()
         finish()

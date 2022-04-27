@@ -70,6 +70,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DataBaseName,
         return imageList
     }
 
+    //method used to add a new passcode into the database
     fun addPasscode(passcode: Passcode): Boolean {
         val db: SQLiteDatabase = this.writableDatabase
         val cv: ContentValues = ContentValues()
@@ -81,6 +82,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DataBaseName,
         return success != 1L
     }
 
+    //method to retrieve passcode in table
     fun getPasscode(): ArrayList<Passcode> {
         val passcodeList = ArrayList<Passcode>()
         val db: SQLiteDatabase = this.readableDatabase
@@ -104,6 +106,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DataBaseName,
 
     }
 
+    //method used to check to see if the passcode table is empty
     fun isEmpty(): Boolean{
         val db: SQLiteDatabase = this.readableDatabase
         val noOfRows: Long = DatabaseUtils.queryNumEntries(db, PasscodeTableName)
@@ -111,6 +114,7 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(context, DataBaseName,
         return noOfRows == 0L
     }
 
+    //method used to clear the passcode table
     fun deleteAll(){
         val db: SQLiteDatabase = this.writableDatabase
         db.delete(PasscodeTableName, null, null)

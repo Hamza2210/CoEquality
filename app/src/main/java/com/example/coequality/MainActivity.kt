@@ -1,15 +1,13 @@
 package com.example.coequality
 
-import androidx.appcompat.app.AppCompatActivity
-import com.hanks.passcodeview.PasscodeView
-import android.os.Bundle
-import com.example.coequality.R
-import com.hanks.passcodeview.PasscodeView.PasscodeViewListener
-import android.widget.Toast
 import android.content.Intent
-import com.example.coequality.animatestartup
+import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.coequality.model.DataBaseHelper
 import com.example.coequality.model.Passcode
+import com.hanks.passcodeview.PasscodeView
+import com.hanks.passcodeview.PasscodeView.PasscodeViewListener
 
 class MainActivity : AppCompatActivity() {
 

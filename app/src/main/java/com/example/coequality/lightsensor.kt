@@ -8,13 +8,9 @@ import android.hardware.SensorManager
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.util.Log
-import android.view.MenuItem
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import java.util.*
 
 class lightsensor : AppCompatActivity(), SensorEventListener, TextToSpeech.OnInitListener {

@@ -1,14 +1,11 @@
 package com.example.coequality
 
 import android.content.Intent
-import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
-import java.util.*
 
 class mainmenu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

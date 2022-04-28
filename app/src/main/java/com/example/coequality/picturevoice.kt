@@ -3,18 +3,14 @@ package com.example.coequality
 import android.app.AlertDialog
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
-import android.util.Log
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatActivity
 import com.example.coequality.model.DataBaseHelper
 import com.example.coequality.model.Image
-import java.util.*
-import kotlin.collections.ArrayList
 
 class picturevoice : AppCompatActivity() {
 

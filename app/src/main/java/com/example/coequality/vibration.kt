@@ -1,16 +1,12 @@
 package com.example.coequality
 
 import android.content.Context
-import android.media.AudioAttributes
 import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.speech.tts.TextToSpeech
-import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -171,7 +167,7 @@ class vibration : AppCompatActivity() {
         vibrator.vibrate(VibrationEffect.createWaveform(pattern, amplitudes, -1))
     }
 
-    //method used to check if a ceetain effect is supported on the device
+    //method used to check if a certain effect is supported on the device
     private fun isEffectSupported(effectId: Int): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             vibrator.areAllEffectsSupported(effectId) == Vibrator.VIBRATION_EFFECT_SUPPORT_YES

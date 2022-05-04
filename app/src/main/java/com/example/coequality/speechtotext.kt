@@ -8,6 +8,8 @@ import android.speech.SpeechRecognizer
 import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.View
+import android.view.animation.AnimationUtils
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -46,6 +48,12 @@ class speechtotext : AppCompatActivity(),TextToSpeech.OnInitListener {
 
     @Suppress("DEPRECATION")
     fun askSpeechInput(view: View){
+        //initialises variable by calling bounce animation xml
+        val animation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+        //finds button for the speech view in the view xml
+        val speechButton = findViewById<ImageButton>(R.id.btn_button)
+        //applies bounce animation to the speech button in the view
+        speechButton.startAnimation(animation)
         //Ensures the device has speech recognition capabilities
         if(!SpeechRecognizer.isRecognitionAvailable(this)){
             Toast.makeText(this, "Unable to recognise speech", Toast.LENGTH_SHORT).show()
